@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 
 public class Main extends JFrame {
 
@@ -9,6 +10,10 @@ public class Main extends JFrame {
         menuBar.add(fileMenu);
         menuBar.add(helpMenu);
         setJMenuBar(menuBar);
+        StatusBar statusBar = new StatusBar();
+        setLayout(new BorderLayout());
+        add(statusBar, BorderLayout.SOUTH);
+
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
     public static void main(String[] args) {

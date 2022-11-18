@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3424875-68d2-4d6e-b51d-551f574a1b56" name="Changes" comment="Initial commit - Menu created">
+    <list default="true" id="c3424875-68d2-4d6e-b51d-551f574a1b56" name="Changes" comment="Help menu implemented.">
+      <change afterPath="$PROJECT_DIR$/src/StatusBar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HelpMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HelpMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +74,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668803910136</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Help menu implemented.">
+      <created>1668805828071</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668805828071</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -89,6 +97,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit - Menu created" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit - Menu created" />
+    <MESSAGE value="Help menu implemented." />
+    <option name="LAST_COMMIT_MESSAGE" value="Help menu implemented." />
   </component>
 </project>
