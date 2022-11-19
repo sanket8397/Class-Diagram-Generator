@@ -11,8 +11,10 @@ public class Main extends JFrame {
         menuBar.add(fileMenu);
         menuBar.add(helpMenu);
         setJMenuBar(menuBar);
+        AppPanel appPanel = new AppPanel();
         StatusBar statusBar = new StatusBar();
         setLayout(new BorderLayout());
+        add(appPanel, BorderLayout.CENTER);
         add(statusBar, BorderLayout.SOUTH);
         setResizable(false);
         setExtendedState(MAXIMIZED_BOTH);
