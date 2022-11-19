@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3424875-68d2-4d6e-b51d-551f574a1b56" name="Changes" comment="Additional functionality in main jframe.">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AppPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ClassPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CodePanel.java" afterDir="false" />
+    <list default="true" id="c3424875-68d2-4d6e-b51d-551f574a1b56" name="Changes" comment="Added App Panel with gridlayout.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668890633767</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added App Panel with gridlayout.">
+      <created>1668898195274</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1668898195274</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -118,6 +121,7 @@
     <MESSAGE value="Help menu implemented." />
     <MESSAGE value="Status Bar implemented." />
     <MESSAGE value="Additional functionality in main jframe." />
-    <option name="LAST_COMMIT_MESSAGE" value="Additional functionality in main jframe." />
+    <MESSAGE value="Added App Panel with gridlayout." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added App Panel with gridlayout." />
   </component>
 </project>
