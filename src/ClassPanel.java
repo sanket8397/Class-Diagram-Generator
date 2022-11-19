@@ -3,6 +3,6 @@ import java.awt.*;
 
 public class ClassPanel extends JPanel {
     public ClassPanel(){
-        setBackground(Color.ORANGE);
+        setBackground(Color.WHITE);
     }
 }
