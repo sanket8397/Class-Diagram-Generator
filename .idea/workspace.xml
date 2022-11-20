@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c3424875-68d2-4d6e-b51d-551f574a1b56" name="Changes" comment="Help menu implemented.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClassBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassBox.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClassPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
