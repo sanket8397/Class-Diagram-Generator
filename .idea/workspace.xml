@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3424875-68d2-4d6e-b51d-551f574a1b56" name="Changes" comment="Changed App Panel with gridBagLayout.">
+    <list default="true" id="c3424875-68d2-4d6e-b51d-551f574a1b56" name="Changes" comment="Help menu implemented.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClassPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CodePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CodePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,13 +29,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -88,28 +87,7 @@
       <option name="project" value="LOCAL" />
       <updated>1668806374048</updated>
     </task>
-    <task id="LOCAL-00004" summary="Additional functionality in main jframe.">
-      <created>1668890633767</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1668890633767</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Added App Panel with gridlayout.">
-      <created>1668898195274</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1668898195274</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Changed App Panel with gridBagLayout.">
-      <created>1668899142221</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1668899142221</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -127,9 +105,6 @@
     <MESSAGE value="Initial commit - Menu created" />
     <MESSAGE value="Help menu implemented." />
     <MESSAGE value="Status Bar implemented." />
-    <MESSAGE value="Additional functionality in main jframe." />
-    <MESSAGE value="Added App Panel with gridlayout." />
-    <MESSAGE value="Changed App Panel with gridBagLayout." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed App Panel with gridBagLayout." />
+    <option name="LAST_COMMIT_MESSAGE" value="Status Bar implemented." />
   </component>
 </project>
