@@ -22,7 +22,8 @@ public class ClassPanel extends JPanel implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         System.out.println(e.getX() + "---"+ e.getY());
-        ClassBox classBox = new ClassBox(e.getX(), e.getY());
+        String className = JOptionPane.showInputDialog("Name");
+        ClassBox classBox = new ClassBox(className, e.getX(), e.getY());
         classBoxes.add(classBox);
         repaint();
     }
