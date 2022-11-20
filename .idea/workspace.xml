@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3424875-68d2-4d6e-b51d-551f574a1b56" name="Changes" comment="Help menu implemented.">
+    <list default="true" id="c3424875-68d2-4d6e-b51d-551f574a1b56" name="Changes" comment="Checking Overlapping before adding classes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClassBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassBox.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClassPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668806374048</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Checking Overlapping before adding classes">
+      <created>1668906748053</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668906748053</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -105,6 +113,7 @@
     <MESSAGE value="Initial commit - Menu created" />
     <MESSAGE value="Help menu implemented." />
     <MESSAGE value="Status Bar implemented." />
-    <option name="LAST_COMMIT_MESSAGE" value="Status Bar implemented." />
+    <MESSAGE value="Checking Overlapping before adding classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Checking Overlapping before adding classes" />
   </component>
 </project>

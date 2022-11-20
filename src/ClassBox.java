@@ -20,4 +20,12 @@ public class ClassBox {
         graphics.drawString(className, rectangle.x + 2, rectangle.y + HEIGHT / 4 * 3);
         graphics.setColor(c);
     }
+
+    public Rectangle getRectangle() {
+        return rectangle;
+    }
+
+    public void setRectangle(Rectangle rectangle) {
+        this.rectangle = rectangle;
+    }
 }

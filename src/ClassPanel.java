@@ -24,16 +24,38 @@ public class ClassPanel extends JPanel implements MouseListener {
     }
 
     boolean checkOverlapping(int x, int y) {
+        if ((x + WIDTH / 2) > this.getSize().width || (x - WIDTH / 2) < 0 || (y + HEIGHT / 2) > this.getSize().height || (y - HEIGHT / 2) < 0)  {
+            return false;
+        }
+
+        int check_top_left_x = x - WIDTH / 2, check_top_left_y = y - HEIGHT / 2;
+        int check_bottom_right_x = x + WIDTH / 2, check_bottom_right_y = y + HEIGHT / 2;
+
+        for (ClassBox classBox: classBoxes) {
+            Rectangle rectangle = classBox.getRectangle();
+
+            int top_left_x = rectangle.x, top_left_y = rectangle.y;
+            int bottom_right_x = rectangle.x + WIDTH, bottom_right_y = rectangle.y + HEIGHT;
+
+            int top = Math.max(check_top_left_y, top_left_y);
+            int bottom = Math.min(check_bottom_right_y, bottom_right_y);
+            int left = Math.max(check_top_left_x, top_left_x);
+            int right = Math.min(check_bottom_right_x, bottom_right_x);
+
+            if (left <= right && top <= bottom) {
+                return false;
+            }
+
+        }
         return true;
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
         int box_x = e.getX(), box_y = e.getY();
-        System.out.println(e.getX() + "---"+ e.getY());
-//        String className = JOptionPane.showInputDialog("Name");
-        String className = "abc";
         if (checkOverlapping(box_x, box_y)) {
+            String className = JOptionPane.showInputDialog("Name");
+//          String className = "abc";
             ClassBox classBox = new ClassBox(className, box_x, box_y);
             classBoxes.add(classBox);
             repaint();
