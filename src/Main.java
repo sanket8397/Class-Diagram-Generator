@@ -12,7 +12,7 @@ public class Main extends JFrame {
         menuBar.add(helpMenu);
         setJMenuBar(menuBar);
         AppPanel appPanel = new AppPanel();
-        StatusBar statusBar = new StatusBar();
+        StatusBar statusBar = StatusBar.getInstance();
         setLayout(new BorderLayout());
         add(appPanel, BorderLayout.CENTER);
         add(statusBar, BorderLayout.SOUTH);

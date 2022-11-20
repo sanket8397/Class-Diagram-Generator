@@ -1,0 +1,48 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"c3424875-68d2-4d6e-b51d-551f574a1b56\" name=\"Changes\" comment=\"Changed App Panel with gridBagLayout.\">\n      <change beforePath=\"$PROJECT_DIR$/src/ClassPanel.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/ClassPanel.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/CodePanel.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/CodePanel.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2Hjd8kkwA6HKMGKCnfh7SVhAiDY\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\"\n  }\n}]]></component>\n  <component name=\"RunManager\" selected=\"Application.Main\">\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\n      <module name=\"Assignment_03_04\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"MenuDemo\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"MenuDemo\" />\n      <module name=\"Assignment_03_04\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.Main\" />\n        <item itemvalue=\"Application.MenuDemo\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"c3424875-68d2-4d6e-b51d-551f574a1b56\" name=\"Changes\" comment=\"\" />\n      <created>1668802272979</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1668802272979</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Initial commit - Menu created\">\n      <created>1668803910136</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1668803910136</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Help menu implemented.\">\n      <created>1668805828071</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1668805828071</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Status Bar implemented.\">\n      <created>1668806374048</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1668806374048</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Additional functionality in main jframe.\">\n      <created>1668890633767</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1668890633767</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Added App Panel with gridlayout.\">\n      <created>1668898195274</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1668898195274</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"Changed App Panel with gridBagLayout.\">\n      <created>1668899142221</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1668899142221</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"7\" />\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"Initial commit - Menu created\" />\n    <MESSAGE value=\"Help menu implemented.\" />\n    <MESSAGE value=\"Status Bar implemented.\" />\n    <MESSAGE value=\"Additional functionality in main jframe.\" />\n    <MESSAGE value=\"Added App Panel with gridlayout.\" />\n    <MESSAGE value=\"Changed App Panel with gridBagLayout.\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Changed App Panel with gridBagLayout.\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision c04bdeb3e9cbbbd28f2f201133f0632e8b10b344)
++++ b/.idea/workspace.xml	(date 1668900048298)
+@@ -1,9 +1,8 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="c3424875-68d2-4d6e-b51d-551f574a1b56" name="Changes" comment="Changed App Panel with gridBagLayout.">
+-      <change beforePath="$PROJECT_DIR$/src/ClassPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassPanel.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/CodePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CodePanel.java" afterDir="false" />
++    <list default="true" id="c3424875-68d2-4d6e-b51d-551f574a1b56" name="Changes" comment="Changed Panel Colors.">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -109,7 +108,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1668899142221</updated>
+     </task>
+-    <option name="localTasksCounter" value="7" />
++    <task id="LOCAL-00007" summary="Changed Panel Colors.">
++      <created>1668899275396</created>
++      <option name="number" value="00007" />
++      <option name="presentableId" value="LOCAL-00007" />
++      <option name="project" value="LOCAL" />
++      <updated>1668899275396</updated>
++    </task>
++    <option name="localTasksCounter" value="8" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -130,6 +136,7 @@
+     <MESSAGE value="Additional functionality in main jframe." />
+     <MESSAGE value="Added App Panel with gridlayout." />
+     <MESSAGE value="Changed App Panel with gridBagLayout." />
+-    <option name="LAST_COMMIT_MESSAGE" value="Changed App Panel with gridBagLayout." />
++    <MESSAGE value="Changed Panel Colors." />
++    <option name="LAST_COMMIT_MESSAGE" value="Changed Panel Colors." />
+   </component>
+ </project>
+\ No newline at end of file

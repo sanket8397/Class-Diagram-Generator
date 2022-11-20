@@ -23,8 +23,15 @@ public class ClassPanel extends JPanel implements MouseListener {
         }
     }
 
+    private void setStatus(String message){
+        StatusBar statusBar = StatusBar.getInstance();
+        statusBar.setStatus(message);
+    }
+
     boolean checkOverlapping(int x, int y) {
         if ((x + WIDTH / 2) > this.getSize().width || (x - WIDTH / 2) < 0 || (y + HEIGHT / 2) > this.getSize().height || (y - HEIGHT / 2) < 0)  {
+            setStatus("Cannot create class because overlapping " +
+                    "with screen boundaries");
             return false;
         }
 
@@ -43,6 +50,8 @@ public class ClassPanel extends JPanel implements MouseListener {
             int right = Math.min(check_bottom_right_x, bottom_right_x);
 
             if (left <= right && top <= bottom) {
+                setStatus("Cannot create class because overlapping " +
+                        "with other class");
                 return false;
             }
 
@@ -58,6 +67,7 @@ public class ClassPanel extends JPanel implements MouseListener {
 //          String className = "abc";
             ClassBox classBox = new ClassBox(className, box_x, box_y);
             classBoxes.add(classBox);
+            setStatus("Class " + className + " is created");
             repaint();
         }
     }
