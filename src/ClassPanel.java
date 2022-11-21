@@ -64,6 +64,10 @@ public class ClassPanel extends JPanel implements MouseListener {
         int box_x = e.getX(), box_y = e.getY();
         if (checkOverlapping(box_x, box_y)) {
             String className = JOptionPane.showInputDialog("Name");
+            if (className == null) {
+                setStatus("Classname cannot be Null");
+                return;
+            }
 //          String className = "abc";
             ClassBox classBox = new ClassBox(className, box_x, box_y);
             classBoxes.add(classBox);
