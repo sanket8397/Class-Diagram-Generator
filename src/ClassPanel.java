@@ -5,7 +5,6 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 public class ClassPanel extends JPanel implements MouseListener {
-    ArrayList<ClassBox> classBoxes = new ArrayList<>();
 
     private static final int WIDTH = 80;
     private static final int HEIGHT = 30;
@@ -18,7 +17,8 @@ public class ClassPanel extends JPanel implements MouseListener {
     @Override
     public void paintComponent(Graphics g) {
         Graphics2D graphics2D = (Graphics2D) g;
-        for (ClassBox classbox: classBoxes) {
+        ArrayList<ClassBox> classSource = ClassSource.getClassSource();
+        for (ClassBox classbox: classSource) {
             classbox.draw(graphics2D);
         }
     }
@@ -37,8 +37,8 @@ public class ClassPanel extends JPanel implements MouseListener {
 
         int check_top_left_x = x - WIDTH / 2, check_top_left_y = y - HEIGHT / 2;
         int check_bottom_right_x = x + WIDTH / 2, check_bottom_right_y = y + HEIGHT / 2;
-
-        for (ClassBox classBox: classBoxes) {
+        ArrayList<ClassBox> classSource = ClassSource.getClassSource();
+        for (ClassBox classBox: classSource) {
             Rectangle rectangle = classBox.getRectangle();
 
             int top_left_x = rectangle.x, top_left_y = rectangle.y;
@@ -70,7 +70,8 @@ public class ClassPanel extends JPanel implements MouseListener {
             }
 //          String className = "abc";
             ClassBox classBox = new ClassBox(className, box_x, box_y);
-            classBoxes.add(classBox);
+            ArrayList<ClassBox> classSource = ClassSource.getClassSource();
+            classSource.add(classBox);
             setStatus("Class " + className + " is created");
             repaint();
         }

@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3424875-68d2-4d6e-b51d-551f574a1b56" name="Changes" comment="Checking Overlapping before adding classes">
+    <list default="true" id="c3424875-68d2-4d6e-b51d-551f574a1b56" name="Changes" comment="Added ENUM for the decorated Arrrow Heads and lines">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Arrow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Arrow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Connection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ConnectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConnectionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Diamond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Diamond.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Line.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Line.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClassPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +16,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -60,7 +55,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ConnectionTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Assignment_03_04" />
@@ -106,8 +101,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ConnectionTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ConnectionTest" />
         <item itemvalue="JUnit.ConnectionTest.connectionTest_from_to" />
         <item itemvalue="JUnit.ConnectionTest.connectionTest" />
         <item itemvalue="Application.MenuDemo" />
@@ -151,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668906748053</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added ENUM for the decorated Arrrow Heads and lines">
+      <created>1669078809080</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669078809080</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -170,6 +172,29 @@
     <MESSAGE value="Help menu implemented." />
     <MESSAGE value="Status Bar implemented." />
     <MESSAGE value="Checking Overlapping before adding classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Checking Overlapping before adding classes" />
+    <MESSAGE value="Added ENUM for the decorated Arrrow Heads and lines" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added ENUM for the decorated Arrrow Heads and lines" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ClassSource.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ClassPanel.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/ClassSource.java</url>
+          <line>3</line>
+          <properties field="classSource" class="ClassSource" />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
