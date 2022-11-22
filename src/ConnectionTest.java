@@ -12,7 +12,7 @@ class ConnectionTest {
     public void connectionTest() {
         Connection line = new Line();
         Connection aggregation = new Diamond(line);
-        assertEquals("Diamond", aggregation.getType());
+        assertEquals(ConnectionTypes.DIAMOND.ordinal(), aggregation.getType());
     }
 
     @Test

@@ -1,13 +1,13 @@
 public abstract class Connection {
-    private String type;
+    private int type;
     private ClassBox fromClass;
     private ClassBox toClass;
 
-    public String getType() {
+    public int getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(int type) {
         this.type = type;
     }
 
