@@ -18,10 +18,13 @@ public class CodeGenerator {
             List<Connection> adjacentConnections = getAdjacentConnections(classBox);
             List<String> extensionList = getExtensionList(adjacentConnections);
             String extensions = getExtensions(extensionList);
+            List<String> compositionList = getCompositionList(adjacentConnections);
+            String compositions = getCompositions(compositionList);
             List<String> associationList = getAssociationList(adjacentConnections);
             String associations = getAssociations(associationList);
 
             codeBuilder.append(classBox.getClassName() + extensions + " {\n");
+            codeBuilder.append(compositions);
             codeBuilder.append(associations);
             codeBuilder.append("}\n\n");
         }
@@ -87,6 +90,28 @@ public class CodeGenerator {
         }
 
         return extensions;
+    }
+
+    private List<String> getCompositionList(List<Connection> adjacentConnections) {
+        List<String> compositionList = new ArrayList<>();
+
+        for (Connection connection : adjacentConnections) {
+            if (connection instanceof Diamond) {
+                compositionList.add(connection.getToClass().getClassName());
+            }
+        }
+
+        return compositionList;
+    }
+
+    private String getCompositions(List<String> compositionList) {
+        StringBuilder compositionBuilder = new StringBuilder();
+
+        for (String composition : compositionList) {
+            compositionBuilder.append("\t" + composition + "\n");
+        }
+
+        return compositionBuilder.toString();
     }
 
     private List<String> getAssociationList(List<Connection> adjacentConnections) {

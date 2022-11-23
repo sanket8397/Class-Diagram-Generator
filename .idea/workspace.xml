@@ -56,14 +56,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CodeGeneratorTest.generateCode_association">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Assignment_03_04" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.CodeGeneratorTest">
     <configuration name="CodeGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment_03_04" />
       <option name="PACKAGE_NAME" value="" />
@@ -73,21 +66,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CodeGeneratorTest.generateCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Assignment_03_04" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CodeGeneratorTest" />
-      <option name="METHOD_NAME" value="generateCode" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="CodeGeneratorTest.generateCode_association" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment_03_04" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="CodeGeneratorTest" />
       <option name="METHOD_NAME" value="generateCode_association" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CodeGeneratorTest.generateCode_composition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assignment_03_04" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CodeGeneratorTest" />
+      <option name="METHOD_NAME" value="generateCode_composition" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -103,13 +96,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CodeGeneratorTest.generateCode_extension_association_composition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assignment_03_04" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CodeGeneratorTest" />
+      <option name="METHOD_NAME" value="generateCode_extension_association_composition" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CodeGeneratorTest.generateCode_association" />
-        <item itemvalue="JUnit.CodeGeneratorTest.generateCode_extension" />
         <item itemvalue="JUnit.CodeGeneratorTest" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.CodeGeneratorTest.generateCode" />
+        <item itemvalue="JUnit.CodeGeneratorTest.generateCode_extension" />
+        <item itemvalue="JUnit.CodeGeneratorTest.generateCode_extension_association_composition" />
+        <item itemvalue="JUnit.CodeGeneratorTest.generateCode_composition" />
+        <item itemvalue="JUnit.CodeGeneratorTest.generateCode_association" />
       </list>
     </recent_temporary>
   </component>
