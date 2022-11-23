@@ -4,49 +4,35 @@ import java.util.List;
 import java.util.Map;
 
 public class CodeGenerator {
-    public void generateCode() {
-        List<ClassBox> classBoxes = ClassSource.getClassBoxes();
-        List<Connection> connections = ClassSource.getConnections();
-        Map<ClassBox, List<Connection>> adjacencyMap = new HashMap<>();
-        generateAdjacencyMap(adjacencyMap, connections);
+
+    List<ClassBox> classBoxes;
+    List<Connection> connections;
+    Map<ClassBox, List<Connection>> adjacencyMap;
+
+    public String generateCode() {
+        updateSource();
+        generateAdjacencyMap();
+        StringBuilder codeBuilder = new StringBuilder();
 
         for (ClassBox classBox : classBoxes) {
-            List<Connection> adjacentConnections = new ArrayList<>();
-            List<String> extensionList = new ArrayList<>();
+            List<Connection> adjacentConnections = getAdjacentConnections(classBox);
+            List<String> extensionList = getExtensionList(adjacentConnections);
+            String extensions = getExtensions(extensionList);
 
-            if (adjacencyMap.containsKey(classBox)) {
-                adjacentConnections = adjacencyMap.get(classBox);
-            }
-
-            for (Connection connection : adjacentConnections) {
-                //TODO check if type/get type needs to be removed
-                // this can be replaced with instanceof
-                if (connection instanceof Triangle) {
-                    extensionList.add(connection.getToClass().getClassName());
-                }
-            }
-
-            String extensions = "";
-
-            if (!extensionList.isEmpty()) {
-                StringBuilder extensionBuilder = new StringBuilder(" extends ");
-
-                for (String extension : extensionList) {
-                    extensionBuilder.append(extension);
-                    extensionBuilder.append(", ");
-                }
-
-                extensionBuilder.setLength(extensionBuilder.length() - 2);
-                extensions = extensionBuilder.toString();
-            }
-
-            System.out.println(classBox.getClassName() + extensions + " {");
-            System.out.println("}\n");
+            codeBuilder.append(classBox.getClassName() + extensions + " {\n");
+            codeBuilder.append("}\n\n");
         }
+
+        return codeBuilder.toString();
     }
 
-    private void generateAdjacencyMap(Map<ClassBox, List<Connection>> adjacencyMap,
-                                     List<Connection> connections) {
+    private void updateSource() {
+        classBoxes = ClassSource.getClassBoxes();
+        connections = ClassSource.getConnections();
+        adjacencyMap = new HashMap<>();
+    }
+
+    private void generateAdjacencyMap() {
         for (Connection connection : connections) {
             ClassBox fromClass = connection.getFromClass();
 
@@ -56,5 +42,47 @@ public class CodeGenerator {
 
             adjacencyMap.get(fromClass).add(connection);
         }
+    }
+
+    private List<Connection> getAdjacentConnections(ClassBox classBox) {
+        List<Connection> adjacentConnections = new ArrayList<>();
+
+        if (adjacencyMap.containsKey(classBox)) {
+            adjacentConnections = adjacencyMap.get(classBox);
+        }
+
+        return adjacentConnections;
+    }
+
+    private List<String> getExtensionList(List<Connection> adjacentConnections) {
+        List<String> extensionList = new ArrayList<>();
+
+        for (Connection connection : adjacentConnections) {
+            //TODO check if type/get type needs to be removed
+            // this can be replaced with instanceof
+            if (connection instanceof Triangle) {
+                extensionList.add(connection.getToClass().getClassName());
+            }
+        }
+
+        return extensionList;
+    }
+
+    private String getExtensions(List<String> extensionList) {
+        String extensions = "";
+
+        if (!extensionList.isEmpty()) {
+            StringBuilder extensionBuilder = new StringBuilder(" extends ");
+
+            for (String extension : extensionList) {
+                extensionBuilder.append(extension);
+                extensionBuilder.append(", ");
+            }
+
+            extensionBuilder.setLength(extensionBuilder.length() - 2);
+            extensions = extensionBuilder.toString();
+        }
+
+        return extensions;
     }
 }

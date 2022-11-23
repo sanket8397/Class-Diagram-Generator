@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CodeGeneratorTest {
 
     @Test
-    void generateCode() {
+    void generateCode_extension() {
         ClassBox first = new ClassBox("TestFirst", 0, 0);
         ClassBox second = new ClassBox("TestSecond", 10, 10);
         ClassBox third = new ClassBox("TestThird", 20, 20);
@@ -26,6 +26,11 @@ class CodeGeneratorTest {
         ClassSource.getConnections().add(inheritance);
         ClassSource.getConnections().add(secondInheritance);
         CodeGenerator codeGenerator = new CodeGenerator();
-        codeGenerator.generateCode();
+
+        System.out.println(codeGenerator.generateCode());
+    }
+
+    void generateCode_association() {
+
     }
 }
