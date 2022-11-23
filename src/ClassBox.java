@@ -28,4 +28,8 @@ public class ClassBox {
     public void setRectangle(Rectangle rectangle) {
         this.rectangle = rectangle;
     }
+
+    public String getClassName() {
+        return className;
+    }
 }

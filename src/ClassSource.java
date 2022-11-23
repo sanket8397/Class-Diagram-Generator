@@ -1,21 +1,35 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class ClassSource {
-    private static ArrayList<ClassBox> classSource;
+    private static List<ClassBox> classBoxes;
+    private static List<Connection> connections;
 
     private ClassSource() {
     }
 
-    public static ArrayList<ClassBox> getClassSource() {
-        if (classSource == null) {
-            classSource = new ArrayList<>();
+    public static List<ClassBox> getClassBoxes() {
+        if (classBoxes == null) {
+            classBoxes = new ArrayList<>();
         }
 
-        return classSource;
+        return classBoxes;
     }
 
-    public void setClassSource(ArrayList<ClassBox> classSource) {
-        this.classSource = classSource;
+    public static List<Connection> getConnections() {
+        if (connections == null) {
+            connections = new ArrayList<>();
+        }
+
+        return connections;
+    }
+
+    public void setClassSource(List<ClassBox> classSource) {
+        this.classBoxes = classSource;
+    }
+
+    public void setConnections(List<Connection> connections) {
+        this.connections = connections;
     }
 
 }

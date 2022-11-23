@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.ArrayList;
+import java.util.List;
 
 public class ClassPanel extends JPanel implements MouseListener {
 
@@ -17,7 +17,7 @@ public class ClassPanel extends JPanel implements MouseListener {
     @Override
     public void paintComponent(Graphics g) {
         Graphics2D graphics2D = (Graphics2D) g;
-        ArrayList<ClassBox> classSource = ClassSource.getClassSource();
+        List<ClassBox> classSource = ClassSource.getClassBoxes();
         for (ClassBox classbox: classSource) {
             classbox.draw(graphics2D);
         }
@@ -37,7 +37,7 @@ public class ClassPanel extends JPanel implements MouseListener {
 
         int check_top_left_x = x - WIDTH / 2, check_top_left_y = y - HEIGHT / 2;
         int check_bottom_right_x = x + WIDTH / 2, check_bottom_right_y = y + HEIGHT / 2;
-        ArrayList<ClassBox> classSource = ClassSource.getClassSource();
+        List<ClassBox> classSource = ClassSource.getClassBoxes();
         for (ClassBox classBox: classSource) {
             Rectangle rectangle = classBox.getRectangle();
 
@@ -70,7 +70,7 @@ public class ClassPanel extends JPanel implements MouseListener {
             }
 //          String className = "abc";
             ClassBox classBox = new ClassBox(className, box_x, box_y);
-            ArrayList<ClassBox> classSource = ClassSource.getClassSource();
+            List<ClassBox> classSource = ClassSource.getClassBoxes();
             classSource.add(classBox);
             setStatus("Class " + className + " is created");
             repaint();
