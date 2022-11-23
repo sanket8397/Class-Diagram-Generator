@@ -10,7 +10,7 @@ public class CodeGenerator {
     Map<ClassBox, List<Connection>> adjacencyMap;
 
     public String generateCode() {
-        updateSource();
+        refresh();
         generateAdjacencyMap();
         StringBuilder codeBuilder = new StringBuilder();
 
@@ -18,15 +18,18 @@ public class CodeGenerator {
             List<Connection> adjacentConnections = getAdjacentConnections(classBox);
             List<String> extensionList = getExtensionList(adjacentConnections);
             String extensions = getExtensions(extensionList);
+            List<String> associationList = getAssociationList(adjacentConnections);
+            String associations = getAssociations(associationList);
 
             codeBuilder.append(classBox.getClassName() + extensions + " {\n");
+            codeBuilder.append(associations);
             codeBuilder.append("}\n\n");
         }
 
         return codeBuilder.toString();
     }
 
-    private void updateSource() {
+    private void refresh() {
         classBoxes = ClassSource.getClassBoxes();
         connections = ClassSource.getConnections();
         adjacencyMap = new HashMap<>();
@@ -84,5 +87,32 @@ public class CodeGenerator {
         }
 
         return extensions;
+    }
+
+    private List<String> getAssociationList(List<Connection> adjacentConnections) {
+        List<String> associationList = new ArrayList<>();
+
+        for (Connection connection : adjacentConnections) {
+            if (connection instanceof Arrow) {
+                associationList.add(connection.getToClass().getClassName());
+            }
+        }
+
+        return associationList;
+    }
+
+    private String getAssociations(List<String> associationList) {
+        if (associationList.isEmpty()) {
+            return "";
+        }
+
+        StringBuilder associationBuilder = new StringBuilder("\tmethod() {\n");
+
+        for (String association : associationList) {
+            associationBuilder.append("\t\t" + association + "\n");
+        }
+
+        associationBuilder.append("\t}\n");
+        return associationBuilder.toString();
     }
 }
