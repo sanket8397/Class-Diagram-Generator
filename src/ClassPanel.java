@@ -95,12 +95,12 @@ public class ClassPanel extends JPanel implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         int box_x = e.getX(), box_y = e.getY();
-
-        if (checkOverlapping(box_x, box_y) == 1) {
+        int check = checkOverlapping(box_x, box_y);
+        if (check == 1) {
             setStatus("Classes for from");
-        } else if (checkOverlapping(box_x, box_y) == 2) {
+        } else if (check == 2) {
             setStatus("Line is drawn");
-        } else if (checkOverlapping(box_x, box_y) == 3) {
+        } else if (check == 3) {
             String className = JOptionPane.showInputDialog("Name");
             if (className == null) {
                 setStatus("Classname cannot be Null");
