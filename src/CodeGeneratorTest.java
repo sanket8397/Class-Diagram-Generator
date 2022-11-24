@@ -6,16 +6,17 @@ class CodeGeneratorTest {
 
     @Test
     void generateCode_extension() {
-        ClassSource.getConnections().clear();
-        ClassSource.getClassBoxes().clear();
+        ClassSource classSource = ClassSource.getInstance();
+        classSource.getConnections().clear();
+        classSource.getClassBoxes().clear();
         System.out.println("-------------------- Extension --------------------\n");
 
         ClassBox first = new ClassBox("TestFirst", 0, 0);
         ClassBox second = new ClassBox("TestSecond", 10, 10);
         ClassBox third = new ClassBox("TestThird", 20, 20);
-        ClassSource.getClassBoxes().add(first);
-        ClassSource.getClassBoxes().add(second);
-        ClassSource.getClassBoxes().add(third);
+        classSource.getClassBoxes().add(first);
+        classSource.getClassBoxes().add(second);
+        classSource.getClassBoxes().add(third);
 
         Line line = new Line();
         Triangle inheritance = new Triangle(line);
@@ -36,16 +37,17 @@ class CodeGeneratorTest {
 
     @Test
     void generateCode_association() {
-        ClassSource.getConnections().clear();
-        ClassSource.getClassBoxes().clear();
+        ClassSource classSource = ClassSource.getInstance();
+        classSource.getConnections().clear();
+        classSource.getClassBoxes().clear();
         System.out.println("-------------------- Association --------------------\n");
 
         ClassBox first = new ClassBox("TestFirst", 0, 0);
         ClassBox second = new ClassBox("TestSecond", 10, 10);
         ClassBox third = new ClassBox("TestThird", 20, 20);
-        ClassSource.getClassBoxes().add(first);
-        ClassSource.getClassBoxes().add(second);
-        ClassSource.getClassBoxes().add(third);
+        classSource.getClassBoxes().add(first);
+        classSource.getClassBoxes().add(second);
+        classSource.getClassBoxes().add(third);
 
         Line firstLine = new Line();
         Arrow firstArrow = new Arrow(firstLine);
@@ -57,8 +59,8 @@ class CodeGeneratorTest {
         secondArrow.setFromClass(first);
         secondArrow.setToClass(third);
 
-        ClassSource.getConnections().add(firstArrow);
-        ClassSource.getConnections().add(secondArrow);
+        classSource.getConnections().add(firstArrow);
+        classSource.getConnections().add(secondArrow);
         CodeGenerator codeGenerator = new CodeGenerator();
 
         System.out.println(codeGenerator.generateCode());
@@ -66,16 +68,17 @@ class CodeGeneratorTest {
 
     @Test
     void generateCode_composition() {
-        ClassSource.getConnections().clear();
-        ClassSource.getClassBoxes().clear();
+        ClassSource classSource = ClassSource.getInstance();
+        classSource.getConnections().clear();
+        classSource.getClassBoxes().clear();
         System.out.println("-------------------- Composition --------------------\n");
 
         ClassBox first = new ClassBox("TestFirst", 0, 0);
         ClassBox second = new ClassBox("TestSecond", 10, 10);
         ClassBox third = new ClassBox("TestThird", 20, 20);
-        ClassSource.getClassBoxes().add(first);
-        ClassSource.getClassBoxes().add(second);
-        ClassSource.getClassBoxes().add(third);
+        classSource.getClassBoxes().add(first);
+        classSource.getClassBoxes().add(second);
+        classSource.getClassBoxes().add(third);
 
         Line firstLine = new Line();
         Diamond firstDiamond = new Diamond(firstLine);
@@ -87,8 +90,8 @@ class CodeGeneratorTest {
         secondDiamond.setFromClass(first);
         secondDiamond.setToClass(third);
 
-        ClassSource.getConnections().add(firstDiamond);
-        ClassSource.getConnections().add(secondDiamond);
+        classSource.getConnections().add(firstDiamond);
+        classSource.getConnections().add(secondDiamond);
         CodeGenerator codeGenerator = new CodeGenerator();
 
         System.out.println(codeGenerator.generateCode());
@@ -96,16 +99,17 @@ class CodeGeneratorTest {
 
     @Test
     void generateCode_extension_association_composition() {
-        ClassSource.getConnections().clear();
-        ClassSource.getClassBoxes().clear();
+        ClassSource classSource = ClassSource.getInstance();
+        classSource.getConnections().clear();
+        classSource.getClassBoxes().clear();
         System.out.println("-------------------- All together --------------------\n");
 
         ClassBox first = new ClassBox("TestFirst", 0, 0);
         ClassBox second = new ClassBox("TestSecond", 10, 10);
         ClassBox third = new ClassBox("TestThird", 20, 20);
-        ClassSource.getClassBoxes().add(first);
-        ClassSource.getClassBoxes().add(second);
-        ClassSource.getClassBoxes().add(third);
+        classSource.getClassBoxes().add(first);
+        classSource.getClassBoxes().add(second);
+        classSource.getClassBoxes().add(third);
 
         Triangle inheritance = new Triangle(new Line());
         inheritance.setFromClass(first);
@@ -133,12 +137,12 @@ class CodeGeneratorTest {
         secondDiamond.setFromClass(first);
         secondDiamond.setToClass(third);
 
-        ClassSource.getConnections().add(firstArrow);
-        ClassSource.getConnections().add(secondArrow);
-        ClassSource.getConnections().add(firstDiamond);
-        ClassSource.getConnections().add(secondDiamond);
-        ClassSource.getConnections().add(inheritance);
-        ClassSource.getConnections().add(secondInheritance);
+        classSource.getConnections().add(firstArrow);
+        classSource.getConnections().add(secondArrow);
+        classSource.getConnections().add(firstDiamond);
+        classSource.getConnections().add(secondDiamond);
+        classSource.getConnections().add(inheritance);
+        classSource.getConnections().add(secondInheritance);
         CodeGenerator codeGenerator = new CodeGenerator();
 
         System.out.println(codeGenerator.generateCode());

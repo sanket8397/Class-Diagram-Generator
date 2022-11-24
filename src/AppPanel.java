@@ -7,6 +7,8 @@ public class AppPanel extends JPanel {
         setLayout(new GridBagLayout());
         GridBagConstraints constraints = new GridBagConstraints();
         CodePanel codePanel = new CodePanel();
+        ClassSource classSource = ClassSource.getInstance();
+        classSource.addObserver(codePanel);
         ClassPanel classPanel = new ClassPanel();
         constraints.fill = GridBagConstraints.BOTH;
         constraints.weightx = 0.3;

@@ -6,8 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="c3424875-68d2-4d6e-b51d-551f574a1b56" name="Changes" comment="Added ENUM for the decorated Arrrow Heads and lines">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClassPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClassSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CodeGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CodeGeneratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CodeGeneratorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CodePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CodePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,22 +60,19 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CodeGeneratorTest">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Assignment_03_04" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CodeGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment_03_04" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="CodeGeneratorTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CodeGeneratorTest.generateCode_association" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Assignment_03_04" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CodeGeneratorTest" />
-      <option name="METHOD_NAME" value="generateCode_association" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -108,11 +109,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.CodeGeneratorTest" />
         <item itemvalue="JUnit.CodeGeneratorTest.generateCode_extension" />
         <item itemvalue="JUnit.CodeGeneratorTest.generateCode_extension_association_composition" />
         <item itemvalue="JUnit.CodeGeneratorTest.generateCode_composition" />
-        <item itemvalue="JUnit.CodeGeneratorTest.generateCode_association" />
       </list>
     </recent_temporary>
   </component>

@@ -70,8 +70,9 @@ public class ClassPanel extends JPanel implements MouseListener {
             }
 //          String className = "abc";
             ClassBox classBox = new ClassBox(className, box_x, box_y);
-            List<ClassBox> classSource = ClassSource.getClassBoxes();
-            classSource.add(classBox);
+//            List<ClassBox> classSource = ClassSource.getClassBoxes();
+            ClassSource classSource = ClassSource.getInstance();
+            classSource.addClassBox(classBox);
             setStatus("Class " + className + " is created");
             repaint();
         }
