@@ -33,8 +33,9 @@ public class CodeGenerator {
     }
 
     private void refresh() {
-        classBoxes = ClassSource.getClassBoxes();
-        connections = ClassSource.getConnections();
+        ClassSource classSource = ClassSource.getInstance();
+        classBoxes = classSource.getClassBoxes();
+        connections = classSource.getConnections();
         adjacencyMap = new HashMap<>();
     }
 
