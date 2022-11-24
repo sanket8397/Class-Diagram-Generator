@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3424875-68d2-4d6e-b51d-551f574a1b56" name="Changes" comment="Added ClassSource as Singleton">
+    <list default="true" id="c3424875-68d2-4d6e-b51d-551f574a1b56" name="Changes" comment="Removed multiple added connections">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClassPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassPanel.java" afterDir="false" />
     </list>
@@ -156,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669078809080</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Removed multiple added connections">
+      <created>1669280130400</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1669280130400</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -176,7 +183,8 @@
     <MESSAGE value="Status Bar implemented." />
     <MESSAGE value="Checking Overlapping before adding classes" />
     <MESSAGE value="Added ENUM for the decorated Arrrow Heads and lines" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added ENUM for the decorated Arrrow Heads and lines" />
+    <MESSAGE value="Removed multiple added connections" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed multiple added connections" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
