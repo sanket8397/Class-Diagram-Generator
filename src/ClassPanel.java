@@ -8,6 +8,8 @@ public class ClassPanel extends JPanel implements MouseListener {
 
     private static final int WIDTH = 80;
     private static final int HEIGHT = 30;
+    private ClassBox fromClass;
+    private ClassBox toClass;
 
     public ClassPanel(){
         setBackground(Color.WHITE);
@@ -17,9 +19,19 @@ public class ClassPanel extends JPanel implements MouseListener {
     @Override
     public void paintComponent(Graphics g) {
         Graphics2D graphics2D = (Graphics2D) g;
-        List<ClassBox> classSource = ClassSource.getClassBoxes();
-        for (ClassBox classbox: classSource) {
+        ClassSource classSource = ClassSource.getInstance();
+        List<ClassBox> classBoxes = classSource.getClassBoxes();
+        for (ClassBox classbox: classBoxes) {
             classbox.draw(graphics2D);
+        }
+
+        List<Connection> connections = classSource.getConnections();
+        for (Connection connection: connections) {
+            graphics2D.setColor(Color.black);
+            graphics2D.drawLine(connection.getFromClass().getRectangle().x,
+                    connection.getFromClass().getRectangle().y,
+                    connection.getToClass().getRectangle().x,
+                    connection.getToClass().getRectangle().y);
         }
     }
 
@@ -28,17 +40,38 @@ public class ClassPanel extends JPanel implements MouseListener {
         statusBar.setStatus(message);
     }
 
-    boolean checkOverlapping(int x, int y) {
+    int checkOverlapping(int x, int y) {
         if ((x + WIDTH / 2) > this.getSize().width || (x - WIDTH / 2) < 0 || (y + HEIGHT / 2) > this.getSize().height || (y - HEIGHT / 2) < 0)  {
             setStatus("Cannot create class because overlapping " +
                     "with screen boundaries");
-            return false;
+            return 0;
+        }
+        ClassSource classSource = ClassSource.getInstance();
+
+        for(ClassBox classBox: classSource.getClassBoxes()) {
+            int class_x = classBox.getRectangle().x;
+            int class_y = classBox.getRectangle().y;
+            if (class_x <= x && class_x + WIDTH >= x && class_y <= y && class_y + HEIGHT >= y) {
+                if (fromClass == null) {
+                    fromClass = classBox;
+                    toClass = null;
+                    return 1;
+                } else {
+                    toClass = classBox;
+                    Connection connection = new Line();
+                    connection.setFromClass(fromClass);
+                    connection.setToClass(toClass);
+                    classSource.addConnection(connection);
+                    fromClass = null;
+                    toClass = null;
+                    return 2;
+                }
+            }
         }
 
         int check_top_left_x = x - WIDTH / 2, check_top_left_y = y - HEIGHT / 2;
         int check_bottom_right_x = x + WIDTH / 2, check_bottom_right_y = y + HEIGHT / 2;
-        List<ClassBox> classSource = ClassSource.getClassBoxes();
-        for (ClassBox classBox: classSource) {
+        for (ClassBox classBox: classSource.getClassBoxes()) {
             Rectangle rectangle = classBox.getRectangle();
 
             int top_left_x = rectangle.x, top_left_y = rectangle.y;
@@ -52,30 +85,35 @@ public class ClassPanel extends JPanel implements MouseListener {
             if (left <= right && top <= bottom) {
                 setStatus("Cannot create class because overlapping " +
                         "with other class");
-                return false;
+                return 0;
             }
 
         }
-        return true;
+        return 3;
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
         int box_x = e.getX(), box_y = e.getY();
-        if (checkOverlapping(box_x, box_y)) {
+
+        if (checkOverlapping(box_x, box_y) == 1) {
+            setStatus("Classes for from");
+        } else if (checkOverlapping(box_x, box_y) == 2) {
+            setStatus("Line is drawn");
+        } else if (checkOverlapping(box_x, box_y) == 3) {
             String className = JOptionPane.showInputDialog("Name");
             if (className == null) {
                 setStatus("Classname cannot be Null");
                 return;
             }
-//          String className = "abc";
             ClassBox classBox = new ClassBox(className, box_x, box_y);
 //            List<ClassBox> classSource = ClassSource.getClassBoxes();
             ClassSource classSource = ClassSource.getInstance();
             classSource.addClassBox(classBox);
             setStatus("Class " + className + " is created");
-            repaint();
         }
+
+        repaint();
     }
 
     @Override

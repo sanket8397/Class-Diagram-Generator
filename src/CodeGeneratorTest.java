@@ -28,8 +28,8 @@ class CodeGeneratorTest {
         secondInheritance.setFromClass(first);
         secondInheritance.setToClass(third);
 
-        ClassSource.getConnections().add(inheritance);
-        ClassSource.getConnections().add(secondInheritance);
+        classSource.addConnection(inheritance);
+        classSource.addConnection(secondInheritance);
         CodeGenerator codeGenerator = new CodeGenerator();
 
         System.out.println(codeGenerator.generateCode());

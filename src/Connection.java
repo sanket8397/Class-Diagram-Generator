@@ -1,3 +1,5 @@
+import java.awt.*;
+
 public abstract class Connection {
     private int type;
     private ClassBox fromClass;

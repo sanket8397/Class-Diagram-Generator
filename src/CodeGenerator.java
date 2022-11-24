@@ -23,7 +23,7 @@ public class CodeGenerator {
             List<String> associationList = getAssociationList(adjacentConnections);
             String associations = getAssociations(associationList);
 
-            codeBuilder.append(classBox.getClassName() + extensions + " {\n");
+            codeBuilder.append(classBox.getClassName()).append(extensions).append(" {\n");
             codeBuilder.append(compositions);
             codeBuilder.append(associations);
             codeBuilder.append("}\n\n");
@@ -109,7 +109,7 @@ public class CodeGenerator {
         StringBuilder compositionBuilder = new StringBuilder();
 
         for (String composition : compositionList) {
-            compositionBuilder.append("\t" + composition + "\n");
+            compositionBuilder.append("\t").append(composition).append("\n");
         }
 
         return compositionBuilder.toString();
@@ -135,7 +135,7 @@ public class CodeGenerator {
         StringBuilder associationBuilder = new StringBuilder("\tmethod() {\n");
 
         for (String association : associationList) {
-            associationBuilder.append("\t\t" + association + "\n");
+            associationBuilder.append("\t\t").append(association).append("\n");
         }
 
         associationBuilder.append("\t}\n");
