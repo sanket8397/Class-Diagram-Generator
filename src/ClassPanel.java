@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.geom.AffineTransform;
+import java.awt.geom.Line2D;
 import java.util.List;
 
 public class ClassPanel extends JPanel implements MouseListener {
@@ -34,6 +36,27 @@ public class ClassPanel extends JPanel implements MouseListener {
                     connection.getToClass().getRectangle().x,
                     connection.getToClass().getRectangle().y);
             graphics2D.drawLine(positions.getFromX(), positions.getFromY(), positions.getToX(), positions.getToY());
+
+
+//            This is to draw arrowheads
+//            AffineTransform at1 = new AffineTransform();
+//            AffineTransform at2 = new AffineTransform();
+//            Line2D line1 = new Line2D.Float(positions.getToX(), positions.getToY(), positions.getToX() + 10, positions.getToY() + 10);
+//            Line2D line2 = new Line2D.Float(positions.getToX(), positions.getToY(), positions.getToX() + 10, positions.getToY() + 10);
+//            at1.rotate(Math.atan2(positions.getFromY() - positions.getToY(), positions.getFromX() - positions.getToX()), positions.getToX(), positions.getToY());
+//            at2.rotate(Math.atan2(positions.getFromY() - positions.getToY(), positions.getFromX() - positions.getToX()), positions.getToX(), positions.getToY());
+//            at2.rotate(Math.toRadians(-90), positions.getToX(), positions.getToY());
+//            graphics2D.draw(at1.createTransformedShape(line1));
+//            graphics2D.draw(at2.createTransformedShape(line2));
+
+//            This is for drawing Diamond
+//            Rectangle rectangle = new Rectangle(positions.getFromX(), positions.getFromY(), 10, 10);
+//            AffineTransform at = new AffineTransform();
+//            at.rotate(Math.atan2(positions.getFromY() - positions.getToY(), positions.getFromX() - positions.getToX()),
+//                    rectangle.x, rectangle.y);
+//            at.rotate(Math.toRadians(135), rectangle.x, rectangle.y);
+//            graphics2D.draw(at.createTransformedShape(rectangle));
+//            graphics2D.fill(at.createTransformedShape(rectangle));
         }
     }
 
