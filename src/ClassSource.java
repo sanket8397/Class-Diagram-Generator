@@ -4,8 +4,8 @@ import java.util.Observable;
 
 public class ClassSource extends Observable {
     private static ClassSource instance;
-    private static List<ClassBox> classBoxes;
-    private static List<Connection> connections;
+    private List<ClassBox> classBoxes;
+    private List<Connection> connections;
 
     private ClassSource() {
         classBoxes = new ArrayList<>();
@@ -19,11 +19,11 @@ public class ClassSource extends Observable {
         return instance;
     }
 
-    public static List<ClassBox> getClassBoxes() {
+    public List<ClassBox> getClassBoxes() {
         return classBoxes;
     }
 
-    public static List<Connection> getConnections() {
+    public List<Connection> getConnections() {
         return connections;
     }
 
