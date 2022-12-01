@@ -21,7 +21,7 @@ public class StatusBar extends JLabel {
     }
 
     public void setStatus(String message) {
-        setText(" "+message);
+        setText(" " + message);
     }
 
 }

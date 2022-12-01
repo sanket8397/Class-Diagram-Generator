@@ -2,16 +2,18 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Line2D;
 import java.util.List;
 
-public class ClassPanel extends JPanel implements MouseListener {
+public class ClassPanel extends JPanel implements MouseListener, MouseMotionListener {
 
     private static final int WIDTH = 80;
     private static final int HEIGHT = 30;
     private ClassBox fromClass;
     private ClassBox toClass;
+    private ClassBox dragClass;
 
     public ClassPanel(){
         setBackground(Color.WHITE);
@@ -79,6 +81,11 @@ public class ClassPanel extends JPanel implements MouseListener {
                             JOptionPane.PLAIN_MESSAGE,
                             null,
                             connectionOptions, connectionOptions[0]);
+                    if (selection == null) {
+                        fromClass = null;
+                        toClass = null;
+                        return 2;
+                    }
                     Connection connection;
                     Line line = new Line();
 
@@ -146,14 +153,44 @@ public class ClassPanel extends JPanel implements MouseListener {
         repaint();
     }
 
+    public ClassBox checkDragClass(int x, int y) {
+        ClassSource classSource = ClassSource.getInstance();
+        for(ClassBox classBox: classSource.getClassBoxes()){
+            int class_x = classBox.getRectangle().x;
+            int class_y = classBox.getRectangle().y;
+            if (class_x <= x && class_x + WIDTH >= x && class_y <= y && class_y + HEIGHT >= y) {
+                return classBox;
+            }
+        }
+        return null;
+    }
+
     @Override
     public void mousePressed(MouseEvent e) {
+        ClassBox classBox = checkDragClass(e.getX(), e.getY());
+        if(classBox != null) {
+            dragClass = classBox;
+        }
+    }
 
+    @Override
+    public void mouseDragged(MouseEvent e){
+        while (dragClass != null) {
+
+        }
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-
+        Rectangle rectangle = new Rectangle(e.getX(), e.getY(), WIDTH, HEIGHT);
+        if (dragClass != null && checkDragClass(e.getX(), e.getY()) != dragClass)
+            dragClass.setRectangle(rectangle);
+        dragClass = null;
+        repaint();
     }
 
     @Override
