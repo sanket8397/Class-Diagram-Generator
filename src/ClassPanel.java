@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.geom.AffineTransform;
+import java.awt.geom.Line2D;
 import java.util.List;
 
 public class ClassPanel extends JPanel implements MouseListener {
@@ -26,12 +28,24 @@ public class ClassPanel extends JPanel implements MouseListener {
         }
 
         List<Connection> connections = classSource.getConnections();
+
+        DrawLine drawLine = new DrawLine();
+        DrawDiamond drawDiamond = new DrawDiamond();
+        DrawArrow drawArrow = new DrawArrow();
+        DrawTriangle drawTriangle = new DrawTriangle();
+
+        drawLine.setSuccessor(drawDiamond);
+        drawDiamond.setSuccessor(drawTriangle);
+        drawTriangle.setSuccessor(drawArrow);
+
         for (Connection connection: connections) {
             graphics2D.setColor(Color.black);
-            graphics2D.drawLine(connection.getFromClass().getRectangle().x,
+            LinePositions positions = new LinePositions();
+            positions.setPositions(connection.getFromClass().getRectangle().x,
                     connection.getFromClass().getRectangle().y,
                     connection.getToClass().getRectangle().x,
                     connection.getToClass().getRectangle().y);
+            drawLine.draw(graphics2D, connection, positions);
         }
     }
 
@@ -58,7 +72,24 @@ public class ClassPanel extends JPanel implements MouseListener {
                     return 1;
                 } else {
                     toClass = classBox;
-                    Connection connection = new Line();
+                    String[] connectionOptions = {"Association", "Composition", "Inheritance"};
+                    String selection = (String)JOptionPane.showInputDialog(this,
+                            "Select Connection Type",
+                            "",
+                            JOptionPane.PLAIN_MESSAGE,
+                            null,
+                            connectionOptions, connectionOptions[0]);
+                    Connection connection;
+                    Line line = new Line();
+
+                    if (selection.equals(connectionOptions[0])) {
+                        connection = new Arrow(line);
+                    } else if (selection.equals(connectionOptions[1])) {
+                        connection = new Diamond(line);
+                    } else {
+                        connection = new Triangle(line);
+                    }
+
                     connection.setFromClass(fromClass);
                     connection.setToClass(toClass);
                     classSource.addConnection(connection);
@@ -95,19 +126,18 @@ public class ClassPanel extends JPanel implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         int box_x = e.getX(), box_y = e.getY();
-
-        if (checkOverlapping(box_x, box_y) == 1) {
+        int check = checkOverlapping(box_x, box_y);
+        if (check == 1) {
             setStatus("Classes for from");
-        } else if (checkOverlapping(box_x, box_y) == 2) {
+        } else if (check == 2) {
             setStatus("Line is drawn");
-        } else if (checkOverlapping(box_x, box_y) == 3) {
+        } else if (check == 3) {
             String className = JOptionPane.showInputDialog("Name");
             if (className == null) {
                 setStatus("Classname cannot be Null");
                 return;
             }
             ClassBox classBox = new ClassBox(className, box_x, box_y);
-//            List<ClassBox> classSource = ClassSource.getClassBoxes();
             ClassSource classSource = ClassSource.getInstance();
             classSource.addClassBox(classBox);
             setStatus("Class " + className + " is created");
