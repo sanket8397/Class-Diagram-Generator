@@ -1,4 +1,7 @@
+package View;
+
 import javax.swing.*;
+import javax.swing.filechooser.FileSystemView;
 
 public class FileMenu extends JMenu {
     public FileMenu(){
@@ -10,5 +13,12 @@ public class FileMenu extends JMenu {
         add(newFile);
         add(saveFile);
         add(loadFile);
+
+        loadFile.addActionListener(e -> chooseFile());
+    }
+
+    private void chooseFile(){
+        JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+        int r = j.showOpenDialog(null);
     }
 }

@@ -1,8 +1,14 @@
+package View;
+
+import Model.ClassBox;
+import Model.ClassSource;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.List;
+
 
 public class ClassPanel extends JPanel implements MouseListener {
 

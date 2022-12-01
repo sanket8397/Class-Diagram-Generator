@@ -1,3 +1,7 @@
+import Model.ClassBox;
+import Model.ClassSource;
+import Model.Connection;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

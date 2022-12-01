@@ -1,3 +1,5 @@
+import Model.Connection;
+
 public class Triangle extends LineDecorator {
     public Triangle(Connection connection) {
         super(connection);

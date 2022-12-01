@@ -4,10 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3424875-68d2-4d6e-b51d-551f574a1b56" name="Changes" comment="Added ENUM for the decorated Arrrow Heads and lines">
+    <list default="true" id="c3424875-68d2-4d6e-b51d-551f574a1b56" name="Changes" comment="Singleton status bar created and working for class creation.">
+      <change afterPath="$PROJECT_DIR$/src/Controller/HelpMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_19_22,_6_14_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_19_22__6_14_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_19_22,_1_44_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_19_22,_4_11_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_19_22__1_44_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_19_22__4_11_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_21_22,_12_02_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_21_22__12_02_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AppPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Arrow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Arrow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClassBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ClassBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClassPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ClassPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClassSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ClassSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CodeGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CodeGeneratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CodeGeneratorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CodePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/CodePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ConnectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConnectionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Diamond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Diamond.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/FileMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HelpMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/HelpMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Line.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Line.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LineDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LineDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StatusBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/StatusBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Triangle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,13 +42,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -56,51 +85,45 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CodeGeneratorTest">
-    <configuration name="CodeGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Assignment_03_04" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MenuDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MenuDemo" />
+      <module name="Assignment_03_04" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConnectionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment_03_04" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CodeGeneratorTest" />
+      <option name="MAIN_CLASS_NAME" value="ConnectionTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CodeGeneratorTest.generateCode_association" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ConnectionTest.connectionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment_03_04" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CodeGeneratorTest" />
-      <option name="METHOD_NAME" value="generateCode_association" />
+      <option name="MAIN_CLASS_NAME" value="ConnectionTest" />
+      <option name="METHOD_NAME" value="connectionTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CodeGeneratorTest.generateCode_composition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ConnectionTest.connectionTest_from_to" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment_03_04" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CodeGeneratorTest" />
-      <option name="METHOD_NAME" value="generateCode_composition" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CodeGeneratorTest.generateCode_extension" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Assignment_03_04" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CodeGeneratorTest" />
-      <option name="METHOD_NAME" value="generateCode_extension" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CodeGeneratorTest.generateCode_extension_association_composition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Assignment_03_04" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CodeGeneratorTest" />
-      <option name="METHOD_NAME" value="generateCode_extension_association_composition" />
+      <option name="MAIN_CLASS_NAME" value="ConnectionTest" />
+      <option name="METHOD_NAME" value="connectionTest_from_to" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -108,11 +131,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CodeGeneratorTest" />
-        <item itemvalue="JUnit.CodeGeneratorTest.generateCode_extension" />
-        <item itemvalue="JUnit.CodeGeneratorTest.generateCode_extension_association_composition" />
-        <item itemvalue="JUnit.CodeGeneratorTest.generateCode_composition" />
-        <item itemvalue="JUnit.CodeGeneratorTest.generateCode_association" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ConnectionTest" />
+        <item itemvalue="JUnit.ConnectionTest.connectionTest_from_to" />
+        <item itemvalue="JUnit.ConnectionTest.connectionTest" />
+        <item itemvalue="Application.MenuDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -153,14 +176,7 @@
       <option name="project" value="LOCAL" />
       <updated>1668906748053</updated>
     </task>
-    <task id="LOCAL-00005" summary="Added ENUM for the decorated Arrrow Heads and lines">
-      <created>1669078809080</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1669078809080</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -179,7 +195,6 @@
     <MESSAGE value="Help menu implemented." />
     <MESSAGE value="Status Bar implemented." />
     <MESSAGE value="Checking Overlapping before adding classes" />
-    <MESSAGE value="Added ENUM for the decorated Arrrow Heads and lines" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added ENUM for the decorated Arrrow Heads and lines" />
+    <option name="LAST_COMMIT_MESSAGE" value="Checking Overlapping before adding classes" />
   </component>
 </project>

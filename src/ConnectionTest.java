@@ -1,3 +1,5 @@
+import Model.ClassBox;
+import Model.Connection;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;

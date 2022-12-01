@@ -1,3 +1,7 @@
+package Model;
+
+import Model.ClassBox;
+
 public abstract class Connection {
     private int type;
     private ClassBox fromClass;
