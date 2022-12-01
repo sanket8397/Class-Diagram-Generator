@@ -8,11 +8,13 @@ public class CodeGenerator {
     List<ClassBox> classBoxes;
     List<Connection> connections;
     Map<ClassBox, List<Connection>> adjacencyMap;
+    private final String TAB = "    ";
 
     public String generateCode() {
         refresh();
         generateAdjacencyMap();
-        StringBuilder codeBuilder = new StringBuilder();
+        final String RESIZE_DELAY = "                                                  \n";
+        StringBuilder codeBuilder = new StringBuilder(RESIZE_DELAY);
 
         for (ClassBox classBox : classBoxes) {
             List<Connection> adjacentConnections = getAdjacentConnections(classBox);
@@ -109,7 +111,7 @@ public class CodeGenerator {
         StringBuilder compositionBuilder = new StringBuilder();
 
         for (String composition : compositionList) {
-            compositionBuilder.append("\t").append(composition).append("\n");
+            compositionBuilder.append(TAB).append(composition).append("\n");
         }
 
         return compositionBuilder.toString();
@@ -132,13 +134,13 @@ public class CodeGenerator {
             return "";
         }
 
-        StringBuilder associationBuilder = new StringBuilder("\tmethod() {\n");
+        StringBuilder associationBuilder = new StringBuilder(TAB + "method() {\n");
 
         for (String association : associationList) {
-            associationBuilder.append("\t\t").append(association).append("\n");
+            associationBuilder.append(TAB + TAB).append(association).append("\n");
         }
 
-        associationBuilder.append("\t}\n");
+        associationBuilder.append(TAB + "}\n");
         return associationBuilder.toString();
     }
 }

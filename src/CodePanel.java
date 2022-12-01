@@ -8,6 +8,8 @@ public class CodePanel extends JTextArea implements Observer {
 
     public CodePanel(){
         setBackground(Color.LIGHT_GRAY);
+        final String RESIZE_DELAY = "                                                  \n";
+        setText(RESIZE_DELAY);
         codeGenerator = new CodeGenerator();
     }
 
