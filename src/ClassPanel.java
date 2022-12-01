@@ -28,6 +28,16 @@ public class ClassPanel extends JPanel implements MouseListener {
         }
 
         List<Connection> connections = classSource.getConnections();
+
+        DrawLine drawLine = new DrawLine();
+        DrawDiamond drawDiamond = new DrawDiamond();
+        DrawArrow drawArrow = new DrawArrow();
+        DrawTriangle drawTriangle = new DrawTriangle();
+
+        drawLine.setSuccessor(drawDiamond);
+        drawDiamond.setSuccessor(drawTriangle);
+        drawTriangle.setSuccessor(drawArrow);
+
         for (Connection connection: connections) {
             graphics2D.setColor(Color.black);
             LinePositions positions = new LinePositions();
@@ -35,70 +45,7 @@ public class ClassPanel extends JPanel implements MouseListener {
                     connection.getFromClass().getRectangle().y,
                     connection.getToClass().getRectangle().x,
                     connection.getToClass().getRectangle().y);
-            graphics2D.drawLine(positions.getFromX(), positions.getFromY(), positions.getToX(), positions.getToY());
-
-
-//            This is to draw arrowheads
-//            AffineTransform at1 = new AffineTransform();
-//            AffineTransform at2 = new AffineTransform();
-//            Line2D line1 = new Line2D.Float(positions.getToX(), positions.getToY(), positions.getToX() + 10, positions.getToY() + 10);
-//            Line2D line2 = new Line2D.Float(positions.getToX(), positions.getToY(), positions.getToX() + 10, positions.getToY() + 10);
-//            at1.rotate(Math.atan2(positions.getFromY() - positions.getToY(), positions.getFromX() - positions.getToX()), positions.getToX(), positions.getToY());
-//            at2.rotate(Math.atan2(positions.getFromY() - positions.getToY(), positions.getFromX() - positions.getToX()), positions.getToX(), positions.getToY());
-//            at2.rotate(Math.toRadians(-90), positions.getToX(), positions.getToY());
-//            graphics2D.draw(at1.createTransformedShape(line1));
-//            graphics2D.draw(at2.createTransformedShape(line2));
-
-//            This is drawing Triangle
-//            AffineTransform at = new AffineTransform();
-//            int line1_x1 = positions.getToX();
-//            int line1_y1 = positions.getToY();
-//
-//            int line2_x1 = positions.getToX() + 5;
-//            int line2_y1 = positions.getToY() + 10;
-//
-//            int line3_x1 = positions.getToX() - 5;
-//            int line3_y1 = positions.getToY() + 10;
-//            int[] x = {line1_x1, line2_x1, line3_x1};
-//            int[] y = {line1_y1, line2_y1, line3_y1};
-//            Line2D line1 = new Line2D.Float(x[0] - 1, y[0] - 1, x[1] + 1, y[1] + 1);
-//            Line2D line2 = new Line2D.Float(x[1] + 1, y[1] + 1, x[2] - 1, y[2] + 1);
-//            Line2D line3 = new Line2D.Float(x[2] - 1, y[2] + 1, x[0] - 1, y[0] - 1);
-//
-//            Polygon polygon = new Polygon(x, y, 3);
-//            at.rotate(Math.atan2(positions.getFromY() - positions.getToY(), positions.getFromX() - positions.getToX()), positions.getToX(), positions.getToY());
-//            at.rotate(Math.toRadians(-90), positions.getToX(), positions.getToY());
-//            graphics2D.setColor(Color.WHITE);
-//            graphics2D.draw(at.createTransformedShape(polygon));
-//            graphics2D.fill(at.createTransformedShape(polygon));
-//            graphics2D.setColor(Color.BLACK);
-//            graphics2D.draw(at.createTransformedShape(line1));
-//            graphics2D.draw(at.createTransformedShape(line2));
-//            graphics2D.draw(at.createTransformedShape(line3));
-
-//            This is to draw diamonds
-            AffineTransform at = new AffineTransform();
-            int line1_x1 = positions.getFromX();
-            int line1_y1 = positions.getFromY();
-
-            int line2_x1 = positions.getFromX() + 5;
-            int line2_y1 = positions.getFromY() + 10;
-
-            int line3_x1 = positions.getFromX();
-            int line3_y1 = positions.getFromY() + 20;
-
-            int line4_x1 = positions.getFromX() - 5;
-            int line4_y1 = positions.getFromY() + 10;
-
-            int[] x = {line1_x1, line2_x1, line3_x1, line4_x1};
-            int[] y = {line1_y1, line2_y1, line3_y1, line4_y1};
-
-            Polygon polygon = new Polygon(x, y, 4);
-            at.rotate(Math.atan2(positions.getFromY() - positions.getToY(), positions.getFromX() - positions.getToX()), positions.getFromX(), positions.getFromY());
-            at.rotate(Math.toRadians(90), positions.getFromX(), positions.getFromY());
-            graphics2D.setColor(Color.BLACK);
-            graphics2D.draw(at.createTransformedShape(polygon));
-            graphics2D.fill(at.createTransformedShape(polygon));
+            drawLine.draw(graphics2D, connection, positions);
         }
     }
 
@@ -143,7 +90,6 @@ public class ClassPanel extends JPanel implements MouseListener {
                         connection = new Triangle(line);
                     }
 
-                    System.out.println(selection);
                     connection.setFromClass(fromClass);
                     connection.setToClass(toClass);
                     classSource.addConnection(connection);
