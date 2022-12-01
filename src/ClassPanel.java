@@ -49,14 +49,56 @@ public class ClassPanel extends JPanel implements MouseListener {
 //            graphics2D.draw(at1.createTransformedShape(line1));
 //            graphics2D.draw(at2.createTransformedShape(line2));
 
-//            This is for drawing Diamond
-//            Rectangle rectangle = new Rectangle(positions.getFromX(), positions.getFromY(), 10, 10);
+//            This is drawing Triangle
 //            AffineTransform at = new AffineTransform();
-//            at.rotate(Math.atan2(positions.getFromY() - positions.getToY(), positions.getFromX() - positions.getToX()),
-//                    rectangle.x, rectangle.y);
-//            at.rotate(Math.toRadians(135), rectangle.x, rectangle.y);
-//            graphics2D.draw(at.createTransformedShape(rectangle));
-//            graphics2D.fill(at.createTransformedShape(rectangle));
+//            int line1_x1 = positions.getToX();
+//            int line1_y1 = positions.getToY();
+//
+//            int line2_x1 = positions.getToX() + 5;
+//            int line2_y1 = positions.getToY() + 10;
+//
+//            int line3_x1 = positions.getToX() - 5;
+//            int line3_y1 = positions.getToY() + 10;
+//            int[] x = {line1_x1, line2_x1, line3_x1};
+//            int[] y = {line1_y1, line2_y1, line3_y1};
+//            Line2D line1 = new Line2D.Float(x[0] - 1, y[0] - 1, x[1] + 1, y[1] + 1);
+//            Line2D line2 = new Line2D.Float(x[1] + 1, y[1] + 1, x[2] - 1, y[2] + 1);
+//            Line2D line3 = new Line2D.Float(x[2] - 1, y[2] + 1, x[0] - 1, y[0] - 1);
+//
+//            Polygon polygon = new Polygon(x, y, 3);
+//            at.rotate(Math.atan2(positions.getFromY() - positions.getToY(), positions.getFromX() - positions.getToX()), positions.getToX(), positions.getToY());
+//            at.rotate(Math.toRadians(-90), positions.getToX(), positions.getToY());
+//            graphics2D.setColor(Color.WHITE);
+//            graphics2D.draw(at.createTransformedShape(polygon));
+//            graphics2D.fill(at.createTransformedShape(polygon));
+//            graphics2D.setColor(Color.BLACK);
+//            graphics2D.draw(at.createTransformedShape(line1));
+//            graphics2D.draw(at.createTransformedShape(line2));
+//            graphics2D.draw(at.createTransformedShape(line3));
+
+//            This is to draw diamonds
+            AffineTransform at = new AffineTransform();
+            int line1_x1 = positions.getFromX();
+            int line1_y1 = positions.getFromY();
+
+            int line2_x1 = positions.getFromX() + 5;
+            int line2_y1 = positions.getFromY() + 10;
+
+            int line3_x1 = positions.getFromX();
+            int line3_y1 = positions.getFromY() + 20;
+
+            int line4_x1 = positions.getFromX() - 5;
+            int line4_y1 = positions.getFromY() + 10;
+
+            int[] x = {line1_x1, line2_x1, line3_x1, line4_x1};
+            int[] y = {line1_y1, line2_y1, line3_y1, line4_y1};
+
+            Polygon polygon = new Polygon(x, y, 4);
+            at.rotate(Math.atan2(positions.getFromY() - positions.getToY(), positions.getFromX() - positions.getToX()), positions.getFromX(), positions.getFromY());
+            at.rotate(Math.toRadians(90), positions.getFromX(), positions.getFromY());
+            graphics2D.setColor(Color.BLACK);
+            graphics2D.draw(at.createTransformedShape(polygon));
+            graphics2D.fill(at.createTransformedShape(polygon));
         }
     }
 
