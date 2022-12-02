@@ -1,4 +1,6 @@
-import java.awt.*;
+package model;
+
+import view.ClassBox;
 
 public abstract class Connection {
     private int type;

@@ -1,3 +1,8 @@
+import view.AppPanel;
+import view.FileMenu;
+import view.HelpMenu;
+import view.StatusBar;
+
 import javax.swing.*;
 import java.awt.*;
 

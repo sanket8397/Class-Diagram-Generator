@@ -1,3 +1,8 @@
+package model;
+
+import model.ClassSource;
+import view.ClassBox;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

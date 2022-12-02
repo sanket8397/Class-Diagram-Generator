@@ -1,8 +1,13 @@
+package view;
+
+import model.Connection;
+import model.LinePositions;
+
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Line2D;
 
-public class DrawArrow implements DrawConnection{
+public class DrawArrow implements DrawConnection {
     @Override
     public void draw(Graphics2D graphics2D, Connection connection, LinePositions position) {
         AffineTransform at1 = new AffineTransform();

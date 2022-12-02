@@ -1,4 +1,9 @@
-import javax.swing.text.Position;
+package view;
+
+import model.Connection;
+import model.Diamond;
+import model.LinePositions;
+
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 

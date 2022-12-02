@@ -1,10 +1,12 @@
+package view;
+
+import model.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.awt.geom.AffineTransform;
-import java.awt.geom.Line2D;
 import java.util.List;
 
 public class ClassPanel extends JPanel implements MouseListener, MouseMotionListener {
@@ -76,7 +78,7 @@ public class ClassPanel extends JPanel implements MouseListener, MouseMotionList
                     toClass = classBox;
                     String[] connectionOptions = {"Association", "Composition", "Inheritance"};
                     String selection = (String)JOptionPane.showInputDialog(this,
-                            "Select Connection Type",
+                            "Select model.Connection Type",
                             "",
                             JOptionPane.PLAIN_MESSAGE,
                             null,
@@ -137,7 +139,7 @@ public class ClassPanel extends JPanel implements MouseListener, MouseMotionList
         if (check == 1) {
             setStatus("Classes for from");
         } else if (check == 2) {
-            setStatus("Line is drawn");
+            setStatus("model.Line is drawn");
         } else if (check == 3) {
             String className = JOptionPane.showInputDialog("Name");
             if (className == null) {

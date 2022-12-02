@@ -1,3 +1,8 @@
+package view;
+
+import model.Connection;
+import model.LinePositions;
+
 import java.awt.*;
 
 public interface DrawConnection {
