@@ -9,8 +9,10 @@ public class App extends JFrame {
         JMenuBar menuBar = new JMenuBar();
         FileMenu fileMenu = new FileMenu();
         HelpMenu helpMenu = new HelpMenu();
+        GenerateDiagramButton generateDiagramButton = new GenerateDiagramButton();
         menuBar.add(fileMenu);
         menuBar.add(helpMenu);
+        menuBar.add(generateDiagramButton);
         setJMenuBar(menuBar);
         AppPanel appPanel = new AppPanel();
         StatusBar statusBar = StatusBar.getInstance();
