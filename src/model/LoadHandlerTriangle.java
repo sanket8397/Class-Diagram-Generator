@@ -23,7 +23,6 @@ public class LoadHandlerTriangle implements  RelationLoadHandler{
         }
     }
 
-    @Override
     public void setSuccessor(RelationLoadHandler successor) {
         this.successor = successor;
     }

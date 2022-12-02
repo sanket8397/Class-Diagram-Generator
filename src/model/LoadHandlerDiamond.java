@@ -3,7 +3,6 @@ package model;
 import view.ClassBox;
 
 public class LoadHandlerDiamond implements RelationLoadHandler{
-
     @Override
     public void loadConnection(String[] tokens, ClassBox fromClass,
                                ClassBox toClass) {
@@ -13,10 +12,5 @@ public class LoadHandlerDiamond implements RelationLoadHandler{
         diamond.setFromClass(fromClass);
         diamond.setToClass(toClass);
         classSource.addConnection(diamond);
-    }
-
-    @Override
-    public void setSuccessor(RelationLoadHandler successor) {
-
     }
 }

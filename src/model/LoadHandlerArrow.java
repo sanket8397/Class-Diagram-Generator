@@ -14,9 +14,10 @@ public class LoadHandlerArrow implements RelationLoadHandler{
         ClassSource source = ClassSource.getInstance();
         if (tokens[1].equals("1")){
             Line lineConn = new Line();
-            lineConn.setFromClass(fromClass);
-            lineConn.setToClass(toClass);
-            source.addConnection(lineConn);
+            Arrow arrow = new Arrow(lineConn);
+            arrow.setFromClass(fromClass);
+            arrow.setToClass(toClass);
+            source.addConnection(arrow);
         } else {
             successor.loadConnection(tokens, fromClass, toClass);
         }
