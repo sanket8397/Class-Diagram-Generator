@@ -23,12 +23,12 @@ public class FileController implements ActionListener {
     }
 
     private void onLoadClicked() {
-        ClassSource classSource = ClassSource.getInstance();
-        classSource.clearSource();
         JFileChooser fileLoadDialog = new JFileChooser();
 
         int loadVal = fileLoadDialog.showSaveDialog(parentPanel);
         if (loadVal==JFileChooser.APPROVE_OPTION){
+            ClassSource classSource = ClassSource.getInstance();
+            classSource.clearSource();
             File loadFile = fileLoadDialog.getSelectedFile();
             try (BufferedReader br = new BufferedReader(new FileReader(loadFile))) {
                 String line;
