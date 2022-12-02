@@ -10,6 +10,7 @@ public class ClassSource extends Observable {
     private static ClassSource instance;
     private List<ClassBox> classBoxes;
     private List<Connection> connections;
+    private String generatedCode;
 
     private ClassSource() {
         classBoxes = new ArrayList<>();
@@ -31,6 +32,10 @@ public class ClassSource extends Observable {
         return connections;
     }
 
+    public String getGeneratedCode() {
+        return generatedCode;
+    }
+
     public void addClassBox(ClassBox classBox) {
         classBoxes.add(classBox);
         setChanged();
@@ -41,6 +46,10 @@ public class ClassSource extends Observable {
         connections.add(connection);
         setChanged();
         notifyObservers();
+    }
+
+    public void setGeneratedCode(String generatedCode) {
+        this.generatedCode = generatedCode;
     }
 
     public void clearSource() {

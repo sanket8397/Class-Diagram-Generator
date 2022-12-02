@@ -36,7 +36,9 @@ public class CodeGenerator {
             codeBuilder.append("}\n\n");
         }
 
-        return codeBuilder.toString();
+        String generatedCode = codeBuilder.toString();
+        ClassSource.getInstance().setGeneratedCode(generatedCode);
+        return generatedCode;
     }
 
     private void refresh() {
