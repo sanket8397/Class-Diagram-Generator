@@ -130,8 +130,6 @@ public class MouseController implements MouseListener, MouseMotionListener {
             classSource.addClassBox(classBox);
             setStatus("Class " + className + " is created");
         }
-
-        parentPanel.repaint();
     }
 
     public ClassBox checkDragClass(int x, int y) {
@@ -160,7 +158,7 @@ public class MouseController implements MouseListener, MouseMotionListener {
         if (dragClass != null && checkDragClass(e.getX(), e.getY()) != dragClass)
             dragClass.setRectangle(rectangle);
         dragClass = null;
-        parentPanel.repaint();
+        ClassSource.getInstance().updatedByReference();
     }
 
     @Override

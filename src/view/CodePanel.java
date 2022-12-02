@@ -8,8 +8,8 @@ import java.util.Observable;
 import java.util.Observer;
 
 public class CodePanel extends JPanel implements Observer {
-    private CodeGenerator codeGenerator;
-    private JTextArea codeTextArea;
+    final private CodeGenerator codeGenerator;
+    final private JTextArea codeTextArea;
 
     public CodePanel(){
         setBackground(Color.LIGHT_GRAY);

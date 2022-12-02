@@ -42,4 +42,16 @@ public class ClassSource extends Observable {
         setChanged();
         notifyObservers();
     }
+
+    public void clearSource() {
+        classBoxes.clear();
+        connections.clear();
+        setChanged();
+        notifyObservers();
+    }
+
+    public void updatedByReference() {
+        setChanged();
+        notifyObservers();
+    }
 }

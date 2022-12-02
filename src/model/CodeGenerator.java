@@ -1,6 +1,5 @@
 package model;
 
-import model.ClassSource;
 import view.ClassBox;
 
 import java.util.ArrayList;
@@ -30,6 +29,7 @@ public class CodeGenerator {
             List<String> associationList = getAssociationList(adjacentConnections);
             String associations = getAssociations(associationList);
 
+            codeBuilder.append("class ");
             codeBuilder.append(classBox.getClassName()).append(extensions).append(" {\n");
             codeBuilder.append(compositions);
             codeBuilder.append(associations);
@@ -72,8 +72,6 @@ public class CodeGenerator {
         List<String> extensionList = new ArrayList<>();
 
         for (Connection connection : adjacentConnections) {
-            //TODO check if type/get type needs to be removed
-            // this can be replaced with instanceof
             if (connection instanceof Triangle) {
                 extensionList.add(connection.getToClass().getClassName());
             }
