@@ -9,9 +9,11 @@ public class ReverseCodeGenerator {
 
     private List<ClassBox> classBoxes = new ArrayList<>();
     private List<Connection> connections = new ArrayList<>();
+    private int placementCounter = 0;
 
     public void parseCode() {
-        String code = ClassSource.getInstance().getGeneratedCode();
+        ClassSource classSource = ClassSource.getInstance();
+        String code = classSource.getGeneratedCode();
 
         try {
             String[] codeSplit = code.split("\n");
@@ -22,7 +24,11 @@ public class ReverseCodeGenerator {
 
                 if (line.startsWith("class")) {
                     String[] lineSplit = line.split("\\s+");
-                    ClassBox classBox = createClassBox(lineSplit[1]);
+                    ClassBox classBox = classExists(lineSplit[1]);
+
+                    if (classBox == null) {
+                        classBox = createClassBox(lineSplit[1]);
+                    }
 
                     if (lineSplit[2].equals("extends")) {
                         createInheritances(lineSplit, 3, classBox);
@@ -56,7 +62,8 @@ public class ReverseCodeGenerator {
     private ClassBox createClassBox(String className) {
         className = className.replace(",", "");
         System.out.println("Created class: " + className);
-        ClassBox classBox = new ClassBox(className, 100, 100);
+        ClassBox classBox = new ClassBox(className, 100, 100 + placementCounter);
+        placementCounter += 40;
         classBoxes.add(classBox);
         return classBox;
     }
@@ -84,6 +91,14 @@ public class ReverseCodeGenerator {
     private ClassBox classExists(String className) {
         for (ClassBox classBox : classBoxes) {
             if (classBox.getClassName().equals(className)) {
+                return classBox;
+            }
+        }
+
+        for (ClassBox classBox : ClassSource.getInstance().getClassBoxes()) {
+            if (classBox.getClassName().equals(className)) {
+                System.out.println("Found in source");
+                classBoxes.add(classBox);
                 return classBox;
             }
         }
