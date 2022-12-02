@@ -10,6 +10,8 @@ public class FileMenu extends JMenu {
         JMenuItem saveFile = new JMenuItem("Save");
         JMenuItem loadFile = new JMenuItem("Load");
 
+
+
         saveFile.addActionListener(e -> onSaveClicked());
 
         loadFile.addActionListener(e -> onLoadClicked());
@@ -21,7 +23,6 @@ public class FileMenu extends JMenu {
 
     private void onLoadClicked() {
         ClassSource classSource = ClassSource.getInstance();
-
         JFileChooser fileLoadDialog = new JFileChooser();
 
         int loadVal = fileLoadDialog.showSaveDialog(this);
@@ -35,65 +36,31 @@ public class FileMenu extends JMenu {
                         ClassBox currBox = new ClassBox(tokens[1], Integer.parseInt(tokens[2]), Integer.parseInt(tokens[3]));
                         classSource.addClassBox(currBox);
                     } else if (tokens[0].equals("1")){
-                        Connection currConnect;
-                        switch (Integer.parseInt(tokens[1])) {
-                        case 0 -> {
-                            currConnect = new Line();
-                            currConnect.setType(0);
-                            for (ClassBox classbox : classSource.getClassBoxes()) {
-                                if (classbox.getClassName().equals(tokens[1])) {
-                                    currConnect.setFromClass(classbox);
-                                }
-
-                                if (classbox.getClassName().equals(tokens[2])) {
-                                    currConnect.setToClass(classbox);
-                                }
+                        ClassBox fromClass = null;
+                        ClassBox toClass = null;
+                        for (ClassBox classbox : classSource.getClassBoxes()) {
+                            if (classbox.getClassName().equals(tokens[2])) {
+                                fromClass = classbox;
+                            }
+                            if (classbox.getClassName().equals(tokens[3])) {
+                                toClass = classbox;
                             }
                         }
-                        case 1 -> {
-                            currConnect = new Line();
-                            currConnect.setType(1);
-                            for (ClassBox classbox : classSource.getClassBoxes()) {
-                                if (classbox.getClassName().equals(tokens[1])) {
-                                    currConnect.setFromClass(classbox);
-                                }
 
-                                if (classbox.getClassName().equals(tokens[2])) {
-                                    currConnect.setToClass(classbox);
-                                }
-                            }
+                        if (fromClass == null || toClass == null){
+                            System.out.println("from class or to class is " +
+                                    "null");
+                            return;
                         }
-                        case 2 -> {
-                            currConnect = new Line();
-                            currConnect.setType(2);
-                            for (ClassBox classbox : classSource.getClassBoxes()) {
-                                if (classbox.getClassName().equals(tokens[1])) {
-                                    currConnect.setFromClass(classbox);
-                                }
 
-                                if (classbox.getClassName().equals(tokens[2])) {
-                                    currConnect.setToClass(classbox);
-                                }
-                            }
-                        }
-                        case 3 -> {
-                            currConnect = new Line();
-                            currConnect.setType(3);
-                            for (ClassBox classbox : classSource.getClassBoxes()) {
-                                if (classbox.getClassName().equals(tokens[1])) {
-                                    currConnect.setFromClass(classbox);
-                                }
+                        LoadHandlerArrow arrow = new LoadHandlerArrow();
+                        LoadHandlerDiamond diamond = new LoadHandlerDiamond();
+                        LoadHandlerTriangle triangle =
+                                new LoadHandlerTriangle();
 
-                                if (classbox.getClassName().equals(tokens[2])) {
-                                    currConnect.setToClass(classbox);
-                                }
-                            }
-                        }
-                        default -> {
-                            JDialog dialog = new JDialog();
-                            dialog.add(new JLabel("Bad data"));
-                        }
-                        }
+                        arrow.setSuccessor(triangle);
+                        triangle.setSuccessor(diamond);
+                        arrow.loadConnection(tokens, fromClass, toClass);
                     } else {
                         JDialog dialog = new JDialog();
                         dialog.add(new JLabel("Bad data"));
@@ -133,8 +100,6 @@ public class FileMenu extends JMenu {
             classesString.append(currBoxString);
         }
 
-        System.out.println(classesString);
-
         StringBuilder connectionString = new StringBuilder();
         for (Connection connection: connections){
             String currConnectionString = "1,";
@@ -151,14 +116,9 @@ public class FileMenu extends JMenu {
             connectionString.append(currConnectionString);
         }
 
-        System.out.println(connectionString);
-
         JFileChooser fileChooser = new JFileChooser();
-
         fileChooser.setFileFilter(new FileNameExtensionFilter("Text Files", "txt"));
-
         int chooseVal = fileChooser.showSaveDialog(this);
-
         if (chooseVal == JFileChooser.APPROVE_OPTION) {
             File classesFile = fileChooser.getSelectedFile();
             try{

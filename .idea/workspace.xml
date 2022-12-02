@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3424875-68d2-4d6e-b51d-551f574a1b56" name="Changes" comment="Removed multiple added connections">
+      <change afterPath="$PROJECT_DIR$/src/LoadHandlerArrow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LoadHandlerDiamond.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LoadHandlerTriangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/RelationLoadHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClassPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +22,8 @@
       <list>
         <option value="Enum" />
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
