@@ -1,12 +1,8 @@
 package view;
 
 import controller.FileController;
-import model.*;
 
 import javax.swing.*;
-import javax.swing.filechooser.FileNameExtensionFilter;
-import java.io.*;
-import java.util.List;
 
 public class FileMenu extends JMenu {
     public FileMenu(){
@@ -16,6 +12,7 @@ public class FileMenu extends JMenu {
         JMenuItem loadFile = new JMenuItem("Load");
 
         FileController fileController = new FileController(this);
+        newFile.addActionListener(fileController);
         saveFile.addActionListener(fileController);
         loadFile.addActionListener(fileController);
 

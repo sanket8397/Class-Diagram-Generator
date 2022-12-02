@@ -18,8 +18,13 @@ public class FileController implements ActionListener {
         this.parentPanel = fileMenu;
     }
 
+    private void onNewClicked() {
+        ClassSource.getInstance().clearSource();
+    }
+
     private void onLoadClicked() {
         ClassSource classSource = ClassSource.getInstance();
+        classSource.clearSource();
         JFileChooser fileLoadDialog = new JFileChooser();
 
         int loadVal = fileLoadDialog.showSaveDialog(parentPanel);
@@ -135,6 +140,8 @@ public class FileController implements ActionListener {
             onSaveClicked();
         } else if (e.getActionCommand().equalsIgnoreCase("Load")) {
             onLoadClicked();
+        } else if (e.getActionCommand().equalsIgnoreCase("New")) {
+            onNewClicked();
         }
     }
 }
