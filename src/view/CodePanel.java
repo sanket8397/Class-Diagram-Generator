@@ -1,3 +1,7 @@
+package view;
+
+import model.CodeGenerator;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.Observable;

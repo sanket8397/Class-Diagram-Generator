@@ -1,3 +1,9 @@
+package view;
+
+import model.Connection;
+import model.LinePositions;
+import model.Triangle;
+
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Line2D;
