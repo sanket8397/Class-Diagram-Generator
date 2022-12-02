@@ -6,9 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c3424875-68d2-4d6e-b51d-551f574a1b56" name="Changes" comment="Added ENUM for the decorated Arrrow Heads and lines">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/src/CodePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CodePanel.java" afterDir="false" />
+=======
       <change beforePath="$PROJECT_DIR$/src/ClassPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HelpMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HelpMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StatusBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StatusBar.java" afterDir="false" />
+>>>>>>> master
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
