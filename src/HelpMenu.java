@@ -20,7 +20,7 @@ public class HelpMenu extends JMenu {
         developersList.add("Sanket Surendra Kapse");
         developersList.add("Soham Prabhakar Patil");
         developersList.add("Rhishabh Suhas Hattarki");
-        developersList.add("Anmol More");
+        developersList.add("Anmol Girish More");
         StringBuilder developers = new StringBuilder();
         for (String developer : developersList)
             developers.append(developer).append("\n");
