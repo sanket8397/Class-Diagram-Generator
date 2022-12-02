@@ -12,7 +12,6 @@ public class ReverseCodeGenerator {
 
     public void parseCode() {
         String code = ClassSource.getInstance().getGeneratedCode();
-        System.out.println("Generated code: \n" + code);
 
         try {
             String[] codeSplit = code.split("\n");
@@ -31,9 +30,18 @@ public class ReverseCodeGenerator {
 
                     line = codeSplit[++i].trim();
 
-                    while (!line.startsWith("method()") && !line.startsWith("}")) {
+                    while (!line.startsWith("method") && !line.startsWith("}")) {
                         createAggregation(line, classBox);
                         line = codeSplit[++i].trim();
+                    }
+
+                    if (line.startsWith("method")) {
+                        line = codeSplit[++i].trim();
+
+                        while (!line.startsWith("}")) {
+                            createAssociation(line, classBox);
+                            line = codeSplit[++i].trim();
+                        }
                     }
                 }
             }
@@ -94,6 +102,20 @@ public class ReverseCodeGenerator {
 
         diamond.setToClass(toClass);
         connections.add(diamond);
+    }
+
+    private void createAssociation(String toClassName, ClassBox fromClass) {
+        Line line = new Line();
+        Arrow arrow = new Arrow(line);
+        arrow.setFromClass(fromClass);
+        ClassBox toClass = classExists(toClassName);
+
+        if (toClass == null) {
+            toClass = createClassBox(toClassName);
+        }
+
+        arrow.setToClass(toClass);
+        connections.add(arrow);
     }
 
     private void updateClassSource(List<ClassBox> classBoxes, List<Connection> connections) {
