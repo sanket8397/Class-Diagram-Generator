@@ -24,10 +24,9 @@ public class FileController implements ActionListener {
 
     private void onLoadClicked() {
         JFileChooser fileLoadDialog = new JFileChooser();
-
+        ClassSource classSource = ClassSource.getInstance();
         int loadVal = fileLoadDialog.showSaveDialog(parentPanel);
         if (loadVal==JFileChooser.APPROVE_OPTION){
-            ClassSource classSource = ClassSource.getInstance();
             classSource.clearSource();
             File loadFile = fileLoadDialog.getSelectedFile();
             try (BufferedReader br = new BufferedReader(new FileReader(loadFile))) {
