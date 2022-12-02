@@ -28,6 +28,13 @@ public class ReverseCodeGenerator {
                     if (lineSplit[2].equals("extends")) {
                         createInheritances(lineSplit, 3, classBox);
                     }
+
+                    line = codeSplit[++i].trim();
+
+                    while (!line.startsWith("method()") && !line.startsWith("}")) {
+                        createAggregation(line, classBox);
+                        line = codeSplit[++i].trim();
+                    }
                 }
             }
         } catch (Exception e) {
@@ -51,7 +58,7 @@ public class ReverseCodeGenerator {
             if (parent.equals("{")) {
                 break;
             }
-            ClassBox parentClassBox = parentExists(parent);
+            ClassBox parentClassBox = classExists(parent);
 
             if (parentClassBox == null) {
                 parentClassBox = createClassBox(parent);
@@ -65,14 +72,28 @@ public class ReverseCodeGenerator {
         }
     }
 
-    private ClassBox parentExists(String parent) {
+    private ClassBox classExists(String className) {
         for (ClassBox classBox : classBoxes) {
-            if (classBox.getClassName().equals(parent)) {
+            if (classBox.getClassName().equals(className)) {
                 return classBox;
             }
         }
 
         return null;
+    }
+
+    private void createAggregation(String toClassName, ClassBox fromClass) {
+        Line line = new Line();
+        Diamond diamond = new Diamond(line);
+        diamond.setFromClass(fromClass);
+        ClassBox toClass = classExists(toClassName);
+
+        if (toClass == null) {
+            toClass = createClassBox(toClassName);
+        }
+
+        diamond.setToClass(toClass);
+        connections.add(diamond);
     }
 
     private void updateClassSource(List<ClassBox> classBoxes, List<Connection> connections) {
