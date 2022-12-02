@@ -6,8 +6,8 @@ public class LinePositions {
     private int fromY;
     private int toX;
     private int toY;
-    private int WIDTH = 80;
-    private int HEIGHT = 30;
+    final private int WIDTH = 80;
+    final private int HEIGHT = 30;
     public LinePositions() {
     }
 
@@ -19,21 +19,19 @@ public class LinePositions {
                 fromX = fromRectX + WIDTH;
                 fromY = fromRectY + HEIGHT / 2;
                 toX = toRectX;
-                toY = toRectY + HEIGHT / 2;
             } else {
                 fromX = fromRectX;
                 fromY = fromRectY + HEIGHT / 2;
                 toX = toRectX + WIDTH;
-                toY = toRectY + HEIGHT / 2;
             }
+            toY = toRectY + HEIGHT / 2;
         } else {
+            fromX = fromRectX + WIDTH / 2;
             if (yDiff < 0) {
-                fromX = fromRectX + WIDTH / 2;
                 fromY = fromRectY + HEIGHT;
                 toX = toRectX + WIDTH / 2;
                 toY = toRectY;
             } else {
-                fromX = fromRectX + WIDTH / 2;
                 fromY = fromRectY;
                 toX = toRectX + WIDTH / 2;
                 toY = toRectY + HEIGHT;

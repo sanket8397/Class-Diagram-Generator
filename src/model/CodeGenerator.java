@@ -1,6 +1,5 @@
 package model;
 
-import model.ClassSource;
 import view.ClassBox;
 
 import java.util.ArrayList;

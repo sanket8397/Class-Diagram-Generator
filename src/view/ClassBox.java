@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class ClassBox {
     private Rectangle rectangle;
-    private String className;
+    final private String className;
     private static final int WIDTH = 80;
     private static final int HEIGHT = 30;
     public ClassBox(String className, int x, int y) {

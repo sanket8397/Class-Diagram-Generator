@@ -12,7 +12,7 @@ import java.io.*;
 import java.util.List;
 
 public class FileController implements ActionListener {
-    private FileMenu parentPanel;
+    final private FileMenu parentPanel;
 
     public FileController(FileMenu fileMenu) {
         this.parentPanel = fileMenu;
