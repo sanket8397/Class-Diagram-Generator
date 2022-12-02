@@ -1,5 +1,7 @@
 package view;
 
+import controller.CodePanelController;
+import model.ClassSource;
 import model.CodeGenerator;
 
 import javax.swing.*;
@@ -8,8 +10,8 @@ import java.util.Observable;
 import java.util.Observer;
 
 public class CodePanel extends JPanel implements Observer {
-    final private CodeGenerator codeGenerator;
-    final private JTextArea codeTextArea;
+    final private CodeGenerator codeGenerator = new CodeGenerator();;
+    final private JTextArea codeTextArea = new JTextArea();;
 
     public CodePanel(){
         setBackground(Color.LIGHT_GRAY);
@@ -18,14 +20,15 @@ public class CodePanel extends JPanel implements Observer {
         constraints.fill = GridBagConstraints.BOTH;
         constraints.weightx = 1.0;
         constraints.weighty = 1.0;
-        codeTextArea = new JTextArea();
         JScrollPane scrollPane = new JScrollPane(codeTextArea);
         scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         add(scrollPane, constraints);
         final String RESIZE_DELAY = "                                                  \n";
         codeTextArea.setText(RESIZE_DELAY);
-        codeGenerator = new CodeGenerator();
+//        ClassSource classSource = ClassSource.getInstance();
+
+        codeTextArea.getDocument().addDocumentListener(new CodePanelController());
     }
 
     @Override

@@ -47,6 +47,7 @@ public class ReverseCodeGenerator {
             }
         } catch (Exception e) {
             System.err.println("Error in parsing code");
+            e.printStackTrace();
         }
 
         updateClassSource(classBoxes, connections);
@@ -128,21 +129,6 @@ public class ReverseCodeGenerator {
 
         for (Connection connection : connections) {
             classSource.addConnection(connection);
-        }
-
-        printSource();
-    }
-
-    //TODO DELETE
-    private void printSource() {
-        System.out.println("Source: ---------------");
-        for (ClassBox classBox : classBoxes) {
-            System.out.println(classBox.getClassName());
-        }
-        for (Connection connection : connections) {
-            System.out.println(connection.getFromClass().getClassName() + "->" +
-                    connection.getToClass().getClassName() + " | " +
-                    connection.getType());
         }
     }
 }
