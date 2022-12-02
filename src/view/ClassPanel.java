@@ -6,8 +6,10 @@ import model.*;
 import javax.swing.*;
 import java.awt.*;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
-public class ClassPanel extends JPanel {
+public class ClassPanel extends JPanel implements Observer {
 
     public ClassPanel(){
         setBackground(Color.WHITE);
@@ -43,5 +45,10 @@ public class ClassPanel extends JPanel {
                     connection.getToClass().getRectangle().y);
             drawLine.draw(graphics2D, connection, positions);
         }
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        repaint();
     }
 }
