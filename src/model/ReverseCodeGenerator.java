@@ -37,7 +37,7 @@ public class ReverseCodeGenerator {
                     line = codeSplit[++i].trim();
 
                     while (!line.startsWith("method") && !line.startsWith("}")) {
-                        createAggregation(line, classBox);
+                        createComposition(line, classBox);
                         line = codeSplit[++i].trim();
                     }
 
@@ -104,7 +104,7 @@ public class ReverseCodeGenerator {
         return null;
     }
 
-    private void createAggregation(String toClassName, ClassBox fromClass) {
+    private void createComposition(String toClassName, ClassBox fromClass) {
         Line line = new Line();
         Diamond diamond = new Diamond(line);
         diamond.setFromClass(fromClass);
