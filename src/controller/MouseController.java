@@ -154,7 +154,7 @@ public class MouseController implements MouseListener, MouseMotionListener {
      * @param y coordinate
      * @return int
      */
-    int checkBlockers(int x, int y) {
+    private int checkBlockers(int x, int y) {
         if (checkBoundaries(x, y))
             return 0;
         ClassSource classSource = ClassSource.getInstance();
