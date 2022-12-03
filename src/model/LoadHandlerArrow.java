@@ -3,7 +3,9 @@ package model;
 import view.ClassBox;
 
 /**
- * 
+ * Part of chain of responsibility for loading a saved file
+ * This class deals with loading arrows - association relation
+ * This has a successor to deal with other relations
  */
 public class LoadHandlerArrow implements RelationLoadHandler{
     private RelationLoadHandler successor;
