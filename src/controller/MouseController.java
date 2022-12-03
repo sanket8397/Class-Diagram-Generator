@@ -11,6 +11,10 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
+/**
+ * Observes mouse actions and performs actions like drag and drop, class and relation
+ * creation, and vicinity checking.
+ */
 public class MouseController implements MouseListener, MouseMotionListener {
 
     final private ClassPanel parentPanel;
@@ -23,11 +27,22 @@ public class MouseController implements MouseListener, MouseMotionListener {
         this.parentPanel = parentPanel;
     }
 
+    /**
+     * Set the message in status bar located at the bottom on the screen
+     * @param message to be set
+     */
     private void setStatus(String message){
         StatusBar statusBar = StatusBar.getInstance();
         statusBar.setStatus(message);
     }
 
+    /**
+     * Check the boundaries of the class being created,
+     * whether it overflows from panel
+     * @param x coordinate
+     * @param y coordinate
+     * @return boolean
+     */
     private boolean checkBoundaries(int x, int y) {
         if ((x + WIDTH / 2) > parentPanel.getSize().width || (x - WIDTH / 2) < 0 ||
                 (y + HEIGHT / 2) > parentPanel.getSize().height || (y - HEIGHT / 2) < 0)  {
@@ -38,10 +53,23 @@ public class MouseController implements MouseListener, MouseMotionListener {
         return false;
     }
 
+    /**
+     * Check for crossing classes, whether it's in other class' vicinity
+     * @param class_x x coordinate of first class
+     * @param class_y y coordinate of first class
+     * @param x of next class
+     * @param y of next class
+     * @return boolean
+     */
     private boolean checkCrossingClasses(int class_x, int class_y, int x, int y) {
         return class_x <= x && class_x + WIDTH >= x && class_y <= y && class_y + HEIGHT >= y;
     }
 
+    /**
+     * Check if class with given name already exists in source
+     * @param className of the class to be checked
+     * @return boolean
+     */
     private boolean checkClassNameExists(String className) {
         ClassSource classSource = ClassSource.getInstance();
         if (className.equals(""))
@@ -54,6 +82,13 @@ public class MouseController implements MouseListener, MouseMotionListener {
         return false;
     }
 
+    /**
+     * Check if classes are overlapping with given x, y coordinates
+     * @param x coordinate
+     * @param y coordinate
+     * @param classSource source object
+     * @return boolean
+     */
     private boolean checkClassOverlapping(int x, int y, ClassSource classSource) {
         int check_top_left_x = x - WIDTH / 2, check_top_left_y = y - HEIGHT / 2;
         int check_bottom_right_x = x + WIDTH / 2, check_bottom_right_y = y + HEIGHT / 2;
@@ -77,6 +112,12 @@ public class MouseController implements MouseListener, MouseMotionListener {
         return false;
     }
 
+    /**
+     * Draw the connection to the given class box
+     * @param classSource source object
+     * @param classBox to which connection is to be drawn
+     * @return boolean
+     */
     private boolean drawConnection(ClassSource classSource, ClassBox classBox) {
         String[] connectionOptions = {"Association", "Composition", "Inheritance"};
         String selection = (String) JOptionPane.showInputDialog(parentPanel,
@@ -107,6 +148,12 @@ public class MouseController implements MouseListener, MouseMotionListener {
         return true;
     }
 
+    /**
+     * Check if there are any blockers for given x, y coordinates
+     * @param x coordinate
+     * @param y coordinate
+     * @return int
+     */
     int checkBlockers(int x, int y) {
         if (checkBoundaries(x, y))
             return 0;
@@ -164,6 +211,12 @@ public class MouseController implements MouseListener, MouseMotionListener {
         }
     }
 
+    /**
+     * Validate class that is being dragged to a safe location
+     * @param x coordinate
+     * @param y coordinate
+     * @return ClassBox
+     */
     public ClassBox checkDragClass(int x, int y) {
         ClassSource classSource = ClassSource.getInstance();
         for(ClassBox classBox: classSource.getClassBoxes()){
