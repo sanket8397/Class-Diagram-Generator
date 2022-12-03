@@ -61,7 +61,6 @@ public class ReverseCodeGenerator {
 
     private ClassBox createClassBox(String className) {
         className = className.replace(",", "");
-        System.out.println("Created class: " + className);
         ClassBox classBox = new ClassBox(className, 100, 100 + placementCounter);
         placementCounter += 40;
         classBoxes.add(classBox);
@@ -97,7 +96,6 @@ public class ReverseCodeGenerator {
 
         for (ClassBox classBox : ClassSource.getInstance().getClassBoxes()) {
             if (classBox.getClassName().equals(className)) {
-                System.out.println("Found in source");
                 classBoxes.add(classBox);
                 return classBox;
             }
