@@ -3,6 +3,9 @@ package model;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Data for the help menu
+ */
 public class HelpMenuData {
     /**
      * Get the list of developers working on the project
