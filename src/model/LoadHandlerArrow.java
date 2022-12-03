@@ -2,6 +2,9 @@ package model;
 
 import view.ClassBox;
 
+/**
+ * 
+ */
 public class LoadHandlerArrow implements RelationLoadHandler{
     private RelationLoadHandler successor;
 

@@ -1,5 +1,9 @@
 package model;
 
+/**
+ * Class used to position the lines (connections) smartly
+ * according the other class in the connection
+ */
 public class LinePositions {
 
     private int fromX;
@@ -11,6 +15,14 @@ public class LinePositions {
     public LinePositions() {
     }
 
+    /**
+     * Set position of the line according to the other class
+     * line will start on right side of box, if other class is on right and so on
+     * @param fromRectX coordinate
+     * @param fromRectY coordinate
+     * @param toRectX coordinate
+     * @param toRectY coordinate
+     */
     public void setPositions(int fromRectX, int fromRectY, int toRectX, int toRectY) {
         int xDiff = fromRectX - toRectX;
         int yDiff = fromRectY - toRectY;
