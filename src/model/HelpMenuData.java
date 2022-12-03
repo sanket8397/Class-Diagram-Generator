@@ -32,6 +32,7 @@ public class HelpMenuData {
         designPatternsList.add("Singleton");
         designPatternsList.add("Observer");
         designPatternsList.add("Chain of Responsibility");
+        designPatternsList.add("Strategy");
         StringBuilder designPatterns = new StringBuilder();
         for (String designPattern : designPatternsList)
             designPatterns.append(designPattern).append("\n");
