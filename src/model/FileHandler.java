@@ -2,15 +2,10 @@ package model;
 
 import view.ClassBox;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * Class to deal with file handling - saving and loading
- * Save - saves the class source data in encoded format
- *
  */
 public class FileHandler {
 
@@ -61,5 +56,21 @@ public class FileHandler {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    /**
+     * Save - saves the class source data in encoded format
+     * @param classesFile where it should be saved
+     * @throws IOException
+     */
+    public void saveFile(File classesFile) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter(classesFile));
+        ClassBoxEncoder classBoxEncoder = new ClassBoxEncoder();
+        ConnectionEncoder connectionEncoder = new ConnectionEncoder();
+        String classesString = classBoxEncoder.encode();
+        String connectionString = connectionEncoder.encode();
+        writer.append(classesString);
+        writer.append(connectionString);
+        writer.close();
     }
 }
