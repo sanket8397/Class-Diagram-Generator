@@ -4,6 +4,11 @@ import view.ClassBox;
 
 import java.util.Objects;
 
+/**
+ * Part of chain of responsibility for loading a saved file
+ * This class is responsible for loading triangle - inheritance relation
+ * This has a successor to deal with other relations
+ */
 public class LoadHandlerTriangle implements  RelationLoadHandler{
     private RelationLoadHandler successor;
 

@@ -1,5 +1,8 @@
 package model;
 
+/**
+ * Decorator used to decorate a basic Line - represents a connection
+ */
 public abstract class LineDecorator extends Connection {
     private final Connection connection;
 

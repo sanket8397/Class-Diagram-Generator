@@ -5,6 +5,10 @@ import model.ClassSource;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Main application panel in the App
+ * Adds the observers to the observable class source
+ */
 public class AppPanel extends JPanel {
     public AppPanel(){
         setLayout(new GridBagLayout());

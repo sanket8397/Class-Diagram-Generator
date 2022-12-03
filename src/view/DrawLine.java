@@ -5,6 +5,10 @@ import model.LinePositions;
 
 import java.awt.*;
 
+/**
+ * UI to draw line
+ * Part of chain of responsibility - has a successor
+ */
 public class DrawLine implements DrawConnection {
     private DrawConnection successor;
     @Override

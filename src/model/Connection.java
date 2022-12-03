@@ -2,6 +2,12 @@ package model;
 
 import view.ClassBox;
 
+/**
+ * Parent abstract class of the connection family
+ * Different connections like line, arrow, diamond and triangle
+ * can be made with this
+ * Part of Decorator pattern
+ */
 public abstract class Connection {
     private int type;
     private ClassBox fromClass;

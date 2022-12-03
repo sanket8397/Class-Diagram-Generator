@@ -7,6 +7,12 @@ import javax.swing.event.DocumentListener;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 
+/**
+ * This class listens to the Text Area in the Code Panel
+ * Whenever there is any new addition, change or anything is removed,
+ * the generatedCode is updated in the Class Source
+ * This is used to generate the class diagrams from user input source code
+ */
 public class CodePanelController implements DocumentListener {
 
     @Override
@@ -24,6 +30,11 @@ public class CodePanelController implements DocumentListener {
         updateSourceCode(e);
     }
 
+    /**
+     * Get the text data from the code panel and update
+     * the generated code in Class source
+     * @param e document object that holds the text from code panel
+     */
     private void updateSourceCode(DocumentEvent e) {
         try {
             Document document = e.getDocument();

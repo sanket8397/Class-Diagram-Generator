@@ -2,11 +2,15 @@ package view;
 
 import java.awt.*;
 
+/**
+ * UI for representing a class box
+ */
 public class ClassBox {
     private Rectangle rectangle;
     final private String className;
     private static final int WIDTH = 80;
     private static final int HEIGHT = 30;
+
     public ClassBox(String className, int x, int y) {
         rectangle = new Rectangle(x - (WIDTH / 2), y - (HEIGHT / 2), WIDTH, HEIGHT);
         this.className = className;

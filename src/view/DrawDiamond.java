@@ -7,6 +7,10 @@ import model.LinePositions;
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 
+/**
+ * UI to draw diamond - composition
+ * Part of chain of responsibility - has a successor
+ */
 public class DrawDiamond implements DrawConnection{
     private DrawConnection successor;
     @Override

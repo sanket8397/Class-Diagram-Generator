@@ -11,6 +11,11 @@ import java.awt.event.ActionListener;
 import java.io.*;
 import java.util.List;
 
+/**
+ * This connects the actions done in the File Menu - New, Save, Load
+ * to its functionality of resetting the file, saving the file
+ * and loading, respectively
+ */
 public class FileController implements ActionListener {
     final private FileMenu parentPanel;
 
@@ -18,10 +23,17 @@ public class FileController implements ActionListener {
         this.parentPanel = fileMenu;
     }
 
+    /**
+     * Clear the source data from class source when new is clicked
+     */
     private void onNewClicked() {
         ClassSource.getInstance().clearSource();
     }
 
+    /**
+     * When load is clicked, open the load window, when file is selected,
+     * parse the file data to load the class source
+     */
     private void onLoadClicked() {
         JFileChooser fileLoadDialog = new JFileChooser();
         ClassSource classSource = ClassSource.getInstance();
@@ -34,7 +46,8 @@ public class FileController implements ActionListener {
                 while ((line = br.readLine()) != null) {
                     String[] tokens = line.split(",");
                     if (tokens[0].equals("0")){
-                        ClassBox currBox = new ClassBox(tokens[1], Integer.parseInt(tokens[2]), Integer.parseInt(tokens[3]));
+                        ClassBox currBox = new ClassBox(tokens[1], Integer.parseInt(tokens[2]),
+                                Integer.parseInt(tokens[3]));
                         classSource.addClassBox(currBox);
                     } else if (tokens[0].equals("1")){
                         ClassBox fromClass = null;
@@ -73,6 +86,10 @@ public class FileController implements ActionListener {
         }
     }
 
+    /**
+     * When save is clicked, the save window takes the file name,
+     * the class source is encoded into the file for later retrieval
+     */
     private void onSaveClicked() {
 
         ClassSource source = ClassSource.getInstance();

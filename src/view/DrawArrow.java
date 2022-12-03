@@ -7,6 +7,10 @@ import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Line2D;
 
+/**
+ * UI for drawing arrow - association
+ * Part of chain of responsibility - tail
+ */
 public class DrawArrow implements DrawConnection {
     @Override
     public void draw(Graphics2D graphics2D, Connection connection, LinePositions position) {

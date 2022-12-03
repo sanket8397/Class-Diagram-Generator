@@ -9,6 +9,12 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
+/**
+ * UI for the class diagram part
+ * Shows all the class boxes and connections
+ * Part of Observer pattern - observes the class source
+ * It will update whenever data in class source is updated
+ */
 public class ClassPanel extends JPanel implements Observer {
 
     public ClassPanel(){

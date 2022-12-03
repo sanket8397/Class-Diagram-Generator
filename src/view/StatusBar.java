@@ -6,6 +6,10 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 
+/**
+ * UI to show the status bar at the bottom of the screen
+ * Uses singleton pattern
+ */
 public class StatusBar extends JLabel {
     private static StatusBar instance;
     private StatusBar(){

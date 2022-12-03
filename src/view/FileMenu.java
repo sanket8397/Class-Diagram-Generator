@@ -4,6 +4,9 @@ import controller.FileController;
 
 import javax.swing.*;
 
+/**
+ * UI to display the file menu containing - new, save, load
+ */
 public class FileMenu extends JMenu {
     public FileMenu(){
         setText("File");

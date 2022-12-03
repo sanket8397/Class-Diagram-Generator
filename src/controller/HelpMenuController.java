@@ -7,7 +7,14 @@ import java.awt.event.ActionListener;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * This is a listener for the help menu to show project details
+ * like developer list and design patterns
+ */
 public class HelpMenuController implements ActionListener {
+    /**
+     * Show the list of developers working on the project
+     */
     private void showDevelopers() {
         List<String> developersList = new LinkedList<>();
         developersList.add("Sanket Surendra Kapse");
@@ -21,6 +28,9 @@ public class HelpMenuController implements ActionListener {
         new MessageDialog("Developers", developers.toString());
     }
 
+    /**
+     * Show the design patterns used in the project
+     */
     private void showDesignPatterns() {
         List<String> designPatternsList = new LinkedList<>();
         designPatternsList.add("Decorator");

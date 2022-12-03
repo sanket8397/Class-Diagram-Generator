@@ -8,6 +8,10 @@ import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Line2D;
 
+/**
+ * UI to draw triangle - inheritance
+ * Part of chain of responsibility - has a successor
+ */
 public class DrawTriangle implements DrawConnection {
     private DrawConnection successor;
     @Override

@@ -3,6 +3,9 @@ package view;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Application JFrame to run the GUI
+ */
 public class App extends JFrame {
     public App(){
         setTitle("Assignment 4 and 5");
