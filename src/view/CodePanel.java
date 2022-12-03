@@ -9,6 +9,12 @@ import java.awt.*;
 import java.util.Observable;
 import java.util.Observer;
 
+/**
+ * UI for the code text part
+ * Displays the code that is generated based on the diagram that is drawn
+ * Also acts as the input for the user for generating diagrams based on code
+ * Part of Observer pattern - observes changes in class source
+ */
 public class CodePanel extends JPanel implements Observer {
     final private CodeGenerator codeGenerator = new CodeGenerator();;
     final private JTextArea codeTextArea = new JTextArea();;
@@ -26,8 +32,6 @@ public class CodePanel extends JPanel implements Observer {
         add(scrollPane, constraints);
         final String RESIZE_DELAY = "                                                  \n";
         codeTextArea.setText(RESIZE_DELAY);
-//        ClassSource classSource = ClassSource.getInstance();
-
         codeTextArea.getDocument().addDocumentListener(new CodePanelController());
     }
 
