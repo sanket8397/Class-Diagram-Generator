@@ -7,6 +7,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Generate code from the class box and connection data in class source
+ */
 public class CodeGenerator {
 
     List<ClassBox> classBoxes;
@@ -14,6 +17,14 @@ public class CodeGenerator {
     Map<ClassBox, List<Connection>> adjacencyMap;
     private final String TAB = "    ";
 
+    /**
+     * Refresh existing class attributes (clear them)
+     * Generate an adjacency map from the class box and connection data
+     * to represent the diagram in the form of a graph
+     * Go through the data, build classes, inheritances,
+     * compositions and associations in order
+     * @return generated code string
+     */
     public String generateCode() {
         refresh();
         generateAdjacencyMap();
@@ -41,6 +52,9 @@ public class CodeGenerator {
         return generatedCode;
     }
 
+    /**
+     * Reset existing class attributes
+     */
     private void refresh() {
         ClassSource classSource = ClassSource.getInstance();
         classBoxes = classSource.getClassBoxes();
@@ -48,6 +62,10 @@ public class CodeGenerator {
         adjacencyMap = new HashMap<>();
     }
 
+    /**
+     * Generate an adjacency map from the class box and connection data
+     * to represent the diagram in the form of a graph
+     */
     private void generateAdjacencyMap() {
         for (Connection connection : connections) {
             ClassBox fromClass = connection.getFromClass();
@@ -60,6 +78,11 @@ public class CodeGenerator {
         }
     }
 
+    /**
+     * Get connections that are adjacent to the class box provided
+     * @param classBox to which adjacent connections are to be found
+     * @return the list of all adjacent connections
+     */
     private List<Connection> getAdjacentConnections(ClassBox classBox) {
         List<Connection> adjacentConnections = new ArrayList<>();
 
@@ -70,6 +93,11 @@ public class CodeGenerator {
         return adjacentConnections;
     }
 
+    /**
+     * Get the list of all the extensions - inheritances in the adjacent connections
+     * @param adjacentConnections of a class box
+     * @return list of extension names
+     */
     private List<String> getExtensionList(List<Connection> adjacentConnections) {
         List<String> extensionList = new ArrayList<>();
 
@@ -82,6 +110,12 @@ public class CodeGenerator {
         return extensionList;
     }
 
+    /**
+     * Return a concatenated code ready string of all extensions
+     * of the class
+     * @param extensionList of a class
+     * @return concatenated code ready string of all extensions
+     */
     private String getExtensions(List<String> extensionList) {
         String extensions = "";
 
@@ -100,6 +134,11 @@ public class CodeGenerator {
         return extensions;
     }
 
+    /**
+     * Get the list of all the compositions in the adjacent connections
+     * @param adjacentConnections of the class
+     * @return list of composition names
+     */
     private List<String> getCompositionList(List<Connection> adjacentConnections) {
         List<String> compositionList = new ArrayList<>();
 
@@ -112,6 +151,12 @@ public class CodeGenerator {
         return compositionList;
     }
 
+    /**
+     * Return a concatenated code ready string of all compositions
+     * of the class
+     * @param compositionList of a class
+     * @return concatenated code ready string of all compositions
+     */
     private String getCompositions(List<String> compositionList) {
         StringBuilder compositionBuilder = new StringBuilder();
 
@@ -122,6 +167,11 @@ public class CodeGenerator {
         return compositionBuilder.toString();
     }
 
+    /**
+     * Get the list of all the associations in the adjacent connections
+     * @param adjacentConnections of the class
+     * @return list of association names
+     */
     private List<String> getAssociationList(List<Connection> adjacentConnections) {
         List<String> associationList = new ArrayList<>();
 
@@ -134,6 +184,12 @@ public class CodeGenerator {
         return associationList;
     }
 
+    /**
+     * Return a concatenated code ready string of all associations
+     * of the class
+     * @param associationList of a class
+     * @return concatenated code ready string of all associations
+     */
     private String getAssociations(List<String> associationList) {
         if (associationList.isEmpty()) {
             return "";
